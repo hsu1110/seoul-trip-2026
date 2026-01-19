@@ -111,6 +111,54 @@
         </div>
     </section>
 
+    <!-- Currency Calculator Section -->
+    <section class="max-w-4xl mx-auto px-4 pb-10 sm:px-6 lg:px-8">
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 relative overflow-hidden">
+            <!-- Decorative background element -->
+            <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-emerald-50 rounded-full opacity-50 blur-xl"></div>
+            
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 relative z-10">
+                <h2 class="text-2xl font-bold text-stone-900 flex items-center">
+                    <span class="bg-emerald-100 text-emerald-600 p-2 rounded-lg mr-3 text-xl">💱</span>
+                    即時匯率計算機
+                </h2>
+                <div class="mt-2 sm:mt-0 text-xs font-medium text-stone-500 bg-stone-100 px-3 py-1 rounded-full">
+                    預設：1 TWD ≈ <span id="displayRateText">41.5</span> KRW
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-end relative z-10">
+                <!-- Rate Input -->
+                <div>
+                    <label class="block text-xs font-bold text-stone-500 uppercase tracking-wide mb-2">匯率 (TWD ➜ KRW)</label>
+                    <div class="relative group">
+                        <input type="number" id="exchangeRate" value="41.5" step="0.1" class="w-full p-3 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 font-mono font-bold focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all group-hover:bg-white">
+                        <div class="absolute right-3 top-3 text-stone-400 text-xs font-medium pointer-events-none">KRW/TWD</div>
+                    </div>
+                </div>
+
+                <!-- TWD Input -->
+                <div>
+                    <label class="block text-xs font-bold text-stone-500 uppercase tracking-wide mb-2">台幣 (TWD)</label>
+                    <div class="relative group">
+                        <span class="absolute left-3 top-3.5 text-stone-400 font-serif italic">NT$</span>
+                        <input type="number" id="inputTWD" placeholder="輸入台幣" class="w-full p-3 pl-10 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 font-mono font-bold focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all group-hover:bg-white">
+                    </div>
+                </div>
+
+                <!-- KRW Input -->
+                <div>
+                    <label class="block text-xs font-bold text-stone-500 uppercase tracking-wide mb-2">韓幣 (KRW)</label>
+                    <div class="relative group">
+                        <span class="absolute left-3 top-3.5 text-stone-400 font-serif italic">₩</span>
+                        <input type="number" id="inputKRW" placeholder="輸入韓幣" class="w-full p-3 pl-8 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 font-mono font-bold focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all group-hover:bg-white">
+                    </div>
+                </div>
+            </div>
+            <p class="text-xs text-stone-400 mt-4 text-right">*輸入任一欄位自動換算，匯率可自由編輯</p>
+        </div>
+    </section>
+
     <!-- Logistics Section -->
     <section id="logistics" class="bg-white border-y border-stone-100 py-12">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -316,6 +364,44 @@
     </footer>
 
     <script>
+        // Currency Calculator Logic
+        const rateInput = document.getElementById('exchangeRate');
+        const twdInput = document.getElementById('inputTWD');
+        const krwInput = document.getElementById('inputKRW');
+        const displayRateText = document.getElementById('displayRateText');
+
+        function updateCalc(source) {
+            const rate = parseFloat(rateInput.value) || 0;
+            displayRateText.innerText = rate;
+
+            if (source === 'twd') {
+                const twd = parseFloat(twdInput.value);
+                if (!isNaN(twd)) {
+                    krwInput.value = Math.round(twd * rate);
+                } else {
+                    krwInput.value = '';
+                }
+            } else if (source === 'krw') {
+                const krw = parseFloat(krwInput.value);
+                if (!isNaN(krw)) {
+                    twdInput.value = Math.round(krw / rate);
+                } else {
+                    twdInput.value = '';
+                }
+            } else if (source === 'rate') {
+                // If rate changes, update KRW based on TWD if TWD exists
+                if (twdInput.value) {
+                    const twd = parseFloat(twdInput.value);
+                    krwInput.value = Math.round(twd * rate);
+                }
+            }
+        }
+
+        rateInput.addEventListener('input', () => updateCalc('rate'));
+        twdInput.addEventListener('input', () => updateCalc('twd'));
+        krwInput.addEventListener('input', () => updateCalc('krw'));
+
+
         // Data Store
         const itineraryData = [
             {
