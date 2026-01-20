@@ -28,23 +28,17 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
+        /* Hide number input arrows */
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+            -webkit-appearance: none; 
+            margin: 0; 
+        }
+        input[type=number] {
+            -moz-appearance: textfield;
+            appearance: textfield;
+        }
     </style>
-    <!-- Chosen Palette: Urban Winter Chic - Warm Stone/Beige background with soft Rose and Sage accents for a trendy, youthful vibe. -->
-    <!-- Application Structure Plan:
-         1. Hero Section: Quick Trip Summary & Visual Impact.
-         2. Dashboard: Interactive Data Visualization (Weather & Budget) to set expectations.
-         3. Logistics Hub: Flight & Hotel specifics with clear "How to get there" toggles.
-         4. Daily Itinerary (The Core): A tab-based interactive timeline. Users select a day to see the specific flow, maps, and food spots.
-         5. Shopping & Survival Guide: Categorized lists for shopping targets and practical app tips.
-         Reasoning: This structure separates "Static Planning" (Logistics) from "Dynamic Exploring" (Itinerary), allowing the user to quickly access what they need depending on if they are planning or currently traveling.
-    -->
-    <!-- Visualization & Content Choices:
-         1. Weather Chart (Chart.js Line): Essential for packing. Visualizes the temperature drop.
-         2. Budget Allocation (Chart.js Doughnut): Helps visualize spending priorities (heavy on shopping).
-         3. Interactive Timeline: JS-driven content swapping for daily plans is cleaner than a long scroll.
-         4. NO SVG/Mermaid: Used CSS shapes and Unicode icons for visual hierarchy.
-    -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
 </head>
 <body class="bg-stone-50 text-stone-800 antialiased selection:bg-rose-200 selection:text-rose-900">
 
@@ -132,8 +126,8 @@
                 <div>
                     <label class="block text-xs font-bold text-stone-500 uppercase tracking-wide mb-2">匯率 (TWD ➜ KRW)</label>
                     <div class="relative group">
-                        <input type="number" id="exchangeRate" value="41.5" step="0.1" class="w-full p-3 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 font-mono font-bold focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all group-hover:bg-white">
-                        <div class="absolute right-3 top-3 text-stone-400 text-xs font-medium pointer-events-none">KRW/TWD</div>
+                        <input type="number" id="exchangeRate" value="41.5" step="0.1" class="w-full p-3 pr-20 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 font-mono font-bold focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all group-hover:bg-white">
+                        <div class="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 text-xs font-medium pointer-events-none">KRW/TWD</div>
                     </div>
                 </div>
 
@@ -141,8 +135,8 @@
                 <div>
                     <label class="block text-xs font-bold text-stone-500 uppercase tracking-wide mb-2">台幣 (TWD)</label>
                     <div class="relative group">
-                        <span class="absolute left-3 top-3.5 text-stone-400 font-serif italic">NT$</span>
-                        <input type="number" id="inputTWD" placeholder="輸入台幣" class="w-full p-3 pl-10 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 font-mono font-bold focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all group-hover:bg-white">
+                        <span class="absolute left-3 top-1/2 -translate-y-1/2 text-stone-400 font-serif italic">NT$</span>
+                        <input type="number" id="inputTWD" placeholder="輸入台幣" class="w-full p-3 pl-12 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 font-mono font-bold focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all group-hover:bg-white">
                     </div>
                 </div>
 
@@ -150,8 +144,8 @@
                 <div>
                     <label class="block text-xs font-bold text-stone-500 uppercase tracking-wide mb-2">韓幣 (KRW)</label>
                     <div class="relative group">
-                        <span class="absolute left-3 top-3.5 text-stone-400 font-serif italic">₩</span>
-                        <input type="number" id="inputKRW" placeholder="輸入韓幣" class="w-full p-3 pl-8 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 font-mono font-bold focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all group-hover:bg-white">
+                        <span class="absolute left-3 top-1/2 -translate-y-1/2 text-stone-400 font-serif italic">₩</span>
+                        <input type="number" id="inputKRW" placeholder="輸入韓幣" class="w-full p-3 pl-10 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 font-mono font-bold focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all group-hover:bg-white">
                     </div>
                 </div>
             </div>
@@ -213,9 +207,8 @@
                         <h3 class="text-lg font-bold text-stone-900">🏨 Wecostay Namsan</h3>
                         <p class="text-sm text-stone-500 mt-1">位置便利，鄰近忠武路站 (Line 3/4)。</p>
                         <div class="mt-4 space-y-2">
-                            <button onclick="copyText('Wecostay Namsan')" class="w-full text-left text-xs bg-white border border-stone-300 px-3 py-2 rounded hover:bg-stone-100 active:bg-stone-200 transition">
+                            <button onclick="copyAddress()" class="w-full text-left text-xs bg-white border border-stone-300 px-3 py-2 rounded hover:bg-stone-100 active:bg-stone-200 transition">
                                 📋 複製韓文地址 (給司機看)
-                                <span id="address-kr" class="hidden">서울 중구 퇴계로 ... (模擬地址)</span>
                             </button>
                         </div>
                     </div>
@@ -642,10 +635,27 @@
             renderItineraryContent();
         });
 
-        // Simple Copy Hack
-        function copyText(text) {
-            // In a real app, use navigator.clipboard
-            alert("已複製地址: " + text + "\n(請展示給司機看)");
+        // --- NEW COPY FUNCTION (FORCE MODE) ---
+        function copyAddress() {
+            const address = "서울특별시 중구 퇴계로 215 (충무로역 6번 출구)";
+            
+            // Create a temporary textarea element
+            const el = document.createElement('textarea');
+            el.value = address;
+            el.setAttribute('readonly', '');
+            el.style.position = 'absolute';
+            el.style.left = '-9999px';
+            document.body.appendChild(el);
+            
+            // Select and copy
+            el.select();
+            document.execCommand('copy');
+            
+            // Remove the temporary element
+            document.body.removeChild(el);
+
+            // Feedback
+            alert("✅ 地址已成功複製到剪貼簿！\n\n內容：\n" + address + "\n\n(現在可以試著貼上到別的地方了)");
         }
 
     </script>
