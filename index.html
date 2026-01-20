@@ -206,10 +206,20 @@
                     <div class="md:w-1/3">
                         <h3 class="text-lg font-bold text-stone-900">🏨 Wecostay Namsan</h3>
                         <p class="text-sm text-stone-500 mt-1">位置便利，鄰近忠武路站 (Line 3/4)。</p>
+
+                        <!-- VERIFIED ADDRESS BUTTON -->
                         <div class="mt-4 space-y-2">
-                            <button onclick="copyAddress()" class="w-full text-left text-xs bg-white border border-stone-300 px-3 py-2 rounded hover:bg-stone-100 active:bg-stone-200 transition">
-                                📋 複製韓文地址 (給司機看)
+                            <button onclick="copyAddress()" class="w-full text-left text-xs bg-blue-600 text-white px-3 py-3 rounded hover:bg-blue-700 active:bg-blue-800 transition shadow-sm flex items-center justify-between group">
+                                <span class="font-bold">📋 點擊複製完整地址 (新舊格式)</span>
                             </button>
+                            <!-- Visual Reference -->
+                            <div class="bg-stone-100 p-2 rounded text-[10px] text-stone-600 leading-relaxed border border-stone-200">
+                                <p class="font-bold text-stone-800 mb-1">司機看這裡 (Driver Info):</p>
+                                <p>✅ <span class="text-blue-600">위코스테이 남산</span> (Wecostay Namsan)</p>
+                                <p>📍 <span class="font-medium">舊式:</span> 서울 중구 필동1가 43-1</p>
+                                <p>📍 <span class="font-medium">新式:</span> 서울 중구 충무로 3</p>
+                                <p class="text-stone-400 mt-1">(忠武路站 6號出口 / Chungmuro Stn. Exit 6)</p>
+                            </div>
                         </div>
                     </div>
                     <div class="md:w-2/3 space-y-4">
@@ -637,7 +647,7 @@
 
         // --- NEW COPY FUNCTION (FORCE MODE) ---
         function copyAddress() {
-            const address = "서울특별시 중구 퇴계로 215 (충무로역 6번 출구)";
+            const address = "위코스테이 남산\n\n[舊式地址] 서울 중구 필동1가 43-1\n[新式地址] 서울 중구 충무로 3";
             
             // Create a temporary textarea element
             const el = document.createElement('textarea');
@@ -655,7 +665,7 @@
             document.body.removeChild(el);
 
             // Feedback
-            alert("✅ 地址已成功複製到剪貼簿！\n\n內容：\n" + address + "\n\n(現在可以試著貼上到別的地方了)");
+            alert("✅ 地址已複製！ (含新舊兩種格式)\n\n" + address);
         }
 
     </script>
