@@ -28,15 +28,6 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
-        /* Hide number input spinners */
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-        input[type=number] {
-            -moz-appearance: textfield;
-        }
     </style>
     <!-- Chosen Palette: Urban Winter Chic - Warm Stone/Beige background with soft Rose and Sage accents for a trendy, youthful vibe. -->
     <!-- Application Structure Plan:
@@ -130,6 +121,44 @@
                 <h2 class="text-2xl font-bold text-stone-900 flex items-center">
                     <span class="bg-emerald-100 text-emerald-600 p-2 rounded-lg mr-3 text-xl">💱</span>
                     即時匯率計算機
+                </h2>
+                <div class="mt-2 sm:mt-0 text-xs font-medium text-stone-500 bg-stone-100 px-3 py-1 rounded-full">
+                    預設：1 TWD ≈ <span id="displayRateText">41.5</span> KRW
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-end relative z-10">
+                <!-- Rate Input -->
+                <div>
+                    <label class="block text-xs font-bold text-stone-500 uppercase tracking-wide mb-2">匯率 (TWD ➜ KRW)</label>
+                    <div class="relative group">
+                        <input type="number" id="exchangeRate" value="41.5" step="0.1" class="w-full p-3 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 font-mono font-bold focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all group-hover:bg-white">
+                        <div class="absolute right-3 top-3 text-stone-400 text-xs font-medium pointer-events-none">KRW/TWD</div>
+                    </div>
+                </div>
+
+                <!-- TWD Input -->
+                <div>
+                    <label class="block text-xs font-bold text-stone-500 uppercase tracking-wide mb-2">台幣 (TWD)</label>
+                    <div class="relative group">
+                        <span class="absolute left-3 top-3.5 text-stone-400 font-serif italic">NT$</span>
+                        <input type="number" id="inputTWD" placeholder="輸入台幣" class="w-full p-3 pl-10 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 font-mono font-bold focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all group-hover:bg-white">
+                    </div>
+                </div>
+
+                <!-- KRW Input -->
+                <div>
+                    <label class="block text-xs font-bold text-stone-500 uppercase tracking-wide mb-2">韓幣 (KRW)</label>
+                    <div class="relative group">
+                        <span class="absolute left-3 top-3.5 text-stone-400 font-serif italic">₩</span>
+                        <input type="number" id="inputKRW" placeholder="輸入韓幣" class="w-full p-3 pl-8 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 font-mono font-bold focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all group-hover:bg-white">
+                    </div>
+                </div>
+            </div>
+            <p class="text-xs text-stone-400 mt-4 text-right">*輸入任一欄位自動換算，匯率可自由編輯</p>
+        </div>
+    </section>
+
     <!-- Logistics Section -->
     <section id="logistics" class="bg-white border-y border-stone-100 py-12">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
