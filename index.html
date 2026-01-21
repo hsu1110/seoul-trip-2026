@@ -7,50 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Noto Sans TC', sans-serif; }
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 300px;
-            max-height: 400px;
-        }
-        @media (min-width: 768px) {
-            .chart-container { height: 350px; }
-        }
-        .hide-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .hide-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        /* Hide number input arrows */
-        input[type=number]::-webkit-inner-spin-button, 
-        input[type=number]::-webkit-outer-spin-button { 
-            -webkit-appearance: none; 
-            margin: 0; 
-        }
-        input[type=number] {
-            -moz-appearance: textfield;
-            appearance: textfield;
-        }
-        .timeline-line {
-            position: absolute;
-            left: 1.6rem;
-            top: 1rem;
-            bottom: -1rem;
-            width: 2px;
-            background-color: #e5e7eb;
-            z-index: 0;
-        }
-        .last-item .timeline-line {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-stone-50 text-stone-800 antialiased selection:bg-rose-200 selection:text-rose-900">
 
@@ -95,36 +52,8 @@
         </div>
     </div>
 
-    <!-- Data Dashboard Section -->
-    <section class="max-w-4xl mx-auto px-4 py-10 sm:px-6 lg:px-8">
-        <div class="mb-8">
-            <h2 class="text-2xl font-bold text-stone-900">行程分析儀表板</h2>
-            <p class="text-stone-500 mt-2">根據您的許願清單分析出的最佳配置。</p>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Walk vs Eat Chart -->
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100">
-                <h3 class="text-lg font-bold text-stone-800 mb-4">每日體力消耗 vs 熱量攝取</h3>
-                <div class="chart-container">
-                    <canvas id="energyChart"></canvas>
-                </div>
-                <p class="text-xs text-stone-400 mt-2 text-center">*Day 2 (北村) 與 Day 5 (百貨) 是步行高峰，請穿好走的鞋。</p>
-            </div>
-
-            <!-- Category Chart -->
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100">
-                <h3 class="text-lg font-bold text-stone-800 mb-4">行程內容佔比</h3>
-                <div class="chart-container">
-                    <canvas id="categoryChart"></canvas>
-                </div>
-                <p class="text-xs text-stone-400 mt-2 text-center">*完美平衡：45% 逛街，35% 美食，20% 體驗。</p>
-            </div>
-        </div>
-    </section>
-
     <!-- Currency Calculator Section -->
-    <section class="max-w-4xl mx-auto px-4 pb-10 sm:px-6 lg:px-8">
+    <section class="max-w-4xl mx-auto px-4 py-10 sm:px-6 lg:px-8">
         <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 relative overflow-hidden">
             <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-emerald-50 rounded-full opacity-50 blur-xl"></div>
             
@@ -134,7 +63,7 @@
                     購物匯率計算機
                 </h2>
                 <div class="mt-2 sm:mt-0 text-xs font-medium text-stone-500 bg-stone-100 px-3 py-1 rounded-full">
-                    預設：1 TWD ≈ <span id="displayRateText">41.5</span> KRW
+                    預設：1 TWD ≈ <span id="displayRateText">45.28</span> KRW
                 </div>
             </div>
 
@@ -142,7 +71,7 @@
                 <div>
                     <label class="block text-xs font-bold text-stone-500 uppercase tracking-wide mb-2">匯率 (TWD ➜ KRW)</label>
                     <div class="relative group">
-                        <input type="number" id="exchangeRate" value="41.5" step="0.1" class="w-full p-3 pr-20 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 font-mono font-bold focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all group-hover:bg-white">
+                        <input type="number" id="exchangeRate" value="45.28" step="0.1" class="w-full p-3 pr-20 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 font-mono font-bold focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all group-hover:bg-white">
                         <div class="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 text-xs font-medium pointer-events-none">KRW/TWD</div>
                     </div>
                 </div>
@@ -164,60 +93,263 @@
         </div>
     </section>
 
+    <!-- Taiwan Pay Section -->
+    <section class="max-w-4xl mx-auto px-4 pb-10 sm:px-6 lg:px-8">
+        <div class="bg-gradient-to-br from-red-50 to-blue-50 p-6 rounded-2xl shadow-sm border border-red-100 relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-4 opacity-10">
+                <span class="text-9xl font-bold text-red-500">PAY</span>
+            </div>
+            
+            <div class="relative z-10">
+                <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+                    <div>
+                        <h2 class="text-2xl font-bold text-stone-900 flex items-center gap-3">
+                            <span class="bg-red-500 text-white p-2 rounded-lg text-xl">🇹🇼</span>
+                            <span>Taiwan Pay 韓國支付攻略</span>
+                        </h2>
+                        <p class="text-red-600 font-bold mt-2 text-sm">✨ 2026/1/1 ~ 3/31 限定：最高 30% 現金回饋！</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <span class="bg-white/80 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-stone-600 border border-stone-200">免手續費</span>
+                        <span class="bg-red-100 px-3 py-1 rounded-full text-xs font-bold text-red-600 border border-red-200">TWQR</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Benefits Card -->
+                    <div class="bg-white/80 backdrop-blur rounded-xl p-5 border border-red-100">
+                        <h3 class="font-bold text-stone-800 mb-3 flex items-center gap-2">
+                            <span class="text-red-500">💰</span> 回饋重點 (NT$10,000 封頂)
+                        </h3>
+                        <ul class="space-y-2 text-sm text-stone-600">
+                            <li class="flex justify-between">
+                                <span>基本回饋 (20%)</span>
+                                <span class="font-bold text-stone-900">上限 $2,000</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>滿額加碼 (10%)</span>
+                                <span class="font-bold text-stone-900">上限 $1,500</span>
+                            </li>
+                            <li class="pt-2 mt-2 border-t border-dashed border-stone-300 flex justify-between text-red-600 font-bold">
+                                <span>最高可拿</span>
+                                <span>$3,500</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Stores Card -->
+                    <div class="bg-white/80 backdrop-blur rounded-xl p-5 border border-blue-100">
+                        <h3 class="font-bold text-stone-800 mb-3 flex items-center gap-2">
+                            <span class="text-blue-500">🏪</span> 適用通路 (認明 TWQR/BC Card)
+                        </h3>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="bg-purple-100 text-purple-700 px-2 py-1 rounded">CU</span>
+                            <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded">GS25</span>
+                            <span class="bg-green-100 text-green-700 px-2 py-1 rounded">7-11</span>
+                            <span class="bg-red-100 text-red-700 px-2 py-1 rounded">大創 Daiso</span>
+                            <span class="bg-yellow-100 text-yellow-700 px-2 py-1 rounded">Ediya Coffee</span>
+                            <span class="bg-stone-100 text-stone-700 px-2 py-1 rounded">巴黎貝甜</span>
+                            <span class="bg-pink-100 text-pink-700 px-2 py-1 rounded">31冰淇淋</span>
+                            <span class="bg-stone-100 text-stone-700 px-2 py-1 rounded">樂天免稅店</span>
+                        </div>
+                        <p class="mt-3 text-xs text-stone-400">⚠️ 自助結帳機請選「BC Card」或「Paybooc」</p>
+                    </div>
+                </div>
+
+                <!-- How to Use -->
+                <div class="mt-6 bg-stone-900 text-stone-300 rounded-xl p-5 text-sm">
+                    <h3 class="font-bold text-white mb-3 flex items-center gap-2">
+                        <span>📱</span> 設定與使用教學
+                    </h3>
+                    <ol class="list-decimal list-inside space-y-2">
+                        <li>下載<strong>「台灣行動支付」App</strong> 或支援的網銀 App (如: 土銀、一銀、兆豐等)。</li>
+                        <li>綁定<strong>銀行帳戶/金融卡</strong> (⚠️ 不支援信用卡)。</li>
+                        <li>確認已開啟「跨國交易」功能。</li>
+                        <li>結帳時打開 App ➜ 點選「跨國交易」➜ 出示 QR Code 給店員掃描。</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WOWPASS & T-money Section -->
+    <section class="max-w-4xl mx-auto px-4 pb-10 sm:px-6 lg:px-8">
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100">
+            <h2 class="text-2xl font-bold text-stone-900 mb-6 flex items-center">
+                <span class="bg-orange-100 text-orange-600 p-2 rounded-lg mr-3 text-xl">💳</span>
+                支付工具攻略：WOWPASS vs T-money
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <!-- WOWPASS -->
+                <div class="border border-orange-200 bg-orange-50/50 rounded-xl p-5">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-bold text-orange-600">WOWPASS 卡</h3>
+                        <span class="text-xs font-bold bg-orange-100 text-orange-600 px-2 py-1 rounded">三合一神卡</span>
+                    </div>
+                    <p class="text-sm text-stone-600 mb-4">結合「換匯＋簽帳付款＋T-money交通卡」。適合不想帶大量現金的旅客。</p>
+                    <ul class="space-y-2 text-sm text-stone-600">
+                        <li class="flex gap-2"><span class="text-orange-500">✅</span> <strong>換匯方便：</strong>地鐵站機台直接用台幣儲值。</li>
+                        <li class="flex gap-2"><span class="text-orange-500">✅</span> <strong>NFC 儲值：</strong>用手機 App 就能幫交通卡儲值 (大推！)。</li>
+                        <li class="flex gap-2"><span class="text-orange-500">✅</span> <strong>消費回饋：</strong>星巴克、Olive Young 等品牌有現金回饋。</li>
+                    </ul>
+                    <div class="mt-4 pt-4 border-t border-orange-200">
+                        <h4 class="font-bold text-stone-800 text-sm mb-2">📲 機場領取攻略</h4>
+                        <p class="text-xs text-stone-500">
+                            1. <strong>App 預約 (推薦)</strong>：仁川機場 SKT 櫃檯或 CU 超商領取。<br>
+                            2. <strong>現場購買</strong>：AREX 入口處「WOW Exchange」機台。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- T-money -->
+                <div class="border border-stone-200 bg-stone-50/50 rounded-xl p-5">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-bold text-stone-700">T-money 卡</h3>
+                        <span class="text-xs font-bold bg-stone-200 text-stone-600 px-2 py-1 rounded">單純交通卡</span>
+                    </div>
+                    <p class="text-sm text-stone-600 mb-4">韓國最普及的交通卡。適合已有韓幣現金或只搭車的旅客。</p>
+                    <ul class="space-y-2 text-sm text-stone-600">
+                        <li class="flex gap-2"><span class="text-stone-500">✅</span> <strong>購買容易：</strong>機場超商隨買隨用。</li>
+                        <li class="flex gap-2"><span class="text-stone-500">✅</span> <strong>款式多：</strong>有許多偶像/卡通聯名卡面。</li>
+                        <li class="flex gap-2"><span class="text-red-500">⚠️</span> <strong>iPhone 限制：</strong>無法直接用信用卡線上儲值，需去機台付現。</li>
+                    </ul>
+                    <div class="mt-4 pt-4 border-t border-stone-200">
+                        <h4 class="font-bold text-stone-800 text-sm mb-2">💡 專家建議</h4>
+                        <p class="text-xs text-stone-500">
+                            如果您是 iPhone 用戶且不想一直找機台儲值，<strong>強烈建議辦 WOWPASS</strong> 使用 App 的 NFC 儲值功能！
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comparison Table -->
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm text-left text-stone-600">
+                    <thead class="text-xs text-stone-700 uppercase bg-stone-100">
+                        <tr>
+                            <th class="px-4 py-3 rounded-l-lg">比較項目</th>
+                            <th class="px-4 py-3 text-orange-600">WOWPASS</th>
+                            <th class="px-4 py-3 rounded-r-lg">T-money</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-stone-50">
+                            <td class="px-4 py-3 font-medium">主要功能</td>
+                            <td class="px-4 py-3">換匯 + 簽帳 + 交通</td>
+                            <td class="px-4 py-3">純交通卡</td>
+                        </tr>
+                        <tr class="border-b border-stone-50">
+                            <td class="px-4 py-3 font-medium">儲值方式</td>
+                            <td class="px-4 py-3">台幣現金 (機台) / 信用卡 (App)</td>
+                            <td class="px-4 py-3">韓幣現金 (超商/地鐵站)</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-medium">交通卡儲值</td>
+                            <td class="px-4 py-3 font-bold text-orange-600">可用 App NFC 儲值 (免現金)</td>
+                            <td class="px-4 py-3">需去機台/超商用現金</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
     <!-- Logistics Section -->
     <section id="logistics" class="bg-white border-y border-stone-100 py-12">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-2xl font-bold text-stone-900 mb-6 flex items-center">
                 <span class="bg-blue-100 text-blue-600 p-2 rounded-lg mr-3 text-xl">🛫</span>
-                航班與 Wecostay 交通
+                航班與 Wecostay 交通攻略
             </h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                <!-- Inbound -->
-                <div class="border border-stone-200 rounded-xl p-5 hover:border-blue-300 transition-colors relative overflow-hidden group bg-stone-50">
-                    <div class="absolute top-0 right-0 bg-blue-500 text-white text-xs px-2 py-1 rounded-bl-lg">去程</div>
-                    <div class="text-sm text-stone-400 mb-1">2026/02/04 (週三)</div>
-                    <div class="text-xl font-bold text-stone-900">華航 CI 0160</div>
-                    <div class="flex justify-between items-center mt-3 text-sm">
-                        <div><span class="block font-semibold">TPE 桃園</span><span class="block text-stone-500">07:40</span></div>
-                        <div class="text-stone-300">➜ 2h 30m ➜</div>
-                        <div class="text-right"><span class="block font-semibold">ICN 仁川</span><span class="block text-stone-500">11:10</span></div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <!-- Inbound: ICN -> Hotel -->
+                <div>
+                    <h3 class="text-lg font-bold text-stone-800 mb-4 flex items-center">
+                        <span class="bg-blue-500 text-white text-xs px-2 py-1 rounded mr-2">去程</span>
+                        仁川機場 (ICN) ➜ 住宿
+                    </h3>
+                    <div class="space-y-4">
+                        <!-- Option 1: Bus 6015 -->
+                        <div class="border border-blue-200 bg-blue-50 rounded-xl p-5 relative overflow-hidden transition-all hover:shadow-md">
+                            <div class="absolute top-0 right-0 bg-blue-500 text-white text-xs px-2 py-1 rounded-bl-lg">首選推薦</div>
+                            <h4 class="font-bold text-blue-900 mb-2 flex items-center gap-2">🚌 機場巴士 6015 <span class="text-xs font-normal text-blue-600 bg-blue-100 px-2 py-0.5 rounded-full">直達</span></h4>
+                            <ul class="text-sm text-stone-600 space-y-1">
+                                <li><strong>費用：</strong>17,000 韓元 (可刷 T-money)</li>
+                                <li><strong>時間：</strong>約 70-80 分鐘</li>
+                                <li><strong>上車：</strong>T2 (B1層 28號) / T1 (1樓 5B-2)</li>
+                                <li><strong>下車：</strong>忠武路站 (Chungmuro Station)</li>
+                                <li><strong>優點：</strong>免搬行李轉車，下車步行 3-5 分鐘。</li>
+                            </ul>
+                        </div>
+                        <!-- Option 2: AREX -->
+                        <div class="border border-stone-200 rounded-xl p-5 hover:border-stone-300 transition-all">
+                            <h4 class="font-bold text-stone-800 mb-2">🚇 AREX 機場快線 + 地鐵</h4>
+                            <ul class="text-sm text-stone-600 space-y-1">
+                                <li><strong>費用：</strong>約 5,500 ~ 11,000 韓元</li>
+                                <li><strong>路線：</strong>仁川機場 ➜ 首爾站 (轉 4號線) ➜ 忠武路站</li>
+                                <li><strong>備註：</strong>首爾站轉乘需走一段路，人多時拖行李較累。</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Outbound -->
-                <div class="border border-stone-200 rounded-xl p-5 hover:border-blue-300 transition-colors relative overflow-hidden group bg-stone-50">
-                    <div class="absolute top-0 right-0 bg-rose-500 text-white text-xs px-2 py-1 rounded-bl-lg">回程</div>
-                    <div class="text-sm text-stone-400 mb-1">2026/02/09 (週一)</div>
-                    <div class="text-xl font-bold text-stone-900">華航 CI 0261</div>
-                    <div class="flex justify-between items-center mt-3 text-sm">
-                        <div><span class="block font-semibold">GMP 金浦</span><span class="block text-stone-500">13:45</span></div>
-                        <div class="text-stone-300">➜ 2h 40m ➜</div>
-                        <div class="text-right"><span class="block font-semibold">TSA 松山</span><span class="block text-stone-500">15:25</span></div>
+                <!-- Outbound: Hotel -> GMP -->
+                <div>
+                    <h3 class="text-lg font-bold text-stone-800 mb-4 flex items-center">
+                        <span class="bg-rose-500 text-white text-xs px-2 py-1 rounded mr-2">回程</span>
+                        住宿 ➜ 金浦機場 (GMP)
+                    </h3>
+                    <div class="space-y-4">
+                        <!-- Option 1: Taxi -->
+                        <div class="border border-rose-200 bg-rose-50 rounded-xl p-5 relative overflow-hidden transition-all hover:shadow-md">
+                            <div class="absolute top-0 right-0 bg-rose-500 text-white text-xs px-2 py-1 rounded-bl-lg">多人首選</div>
+                            <h4 class="font-bold text-rose-900 mb-2 flex items-center gap-2">🚕 計程車 / Uber <span class="text-xs font-normal text-rose-600 bg-rose-100 px-2 py-0.5 rounded-full">最輕鬆</span></h4>
+                            <ul class="text-sm text-stone-600 space-y-1">
+                                <li><strong>費用：</strong>約 25,000 ~ 30,000 韓元</li>
+                                <li><strong>時間：</strong>約 40 分鐘 (建議 11:00 出發)</li>
+                                <li><strong>優點：</strong>飯店門口出發，多人分攤划算。</li>
+                                <li class="text-rose-600 font-bold text-xs mt-1">⚠️ 注意：回程是金浦機場！</li>
+                            </ul>
+                        </div>
+                        <!-- Option 2: Bus 6021 -->
+                        <div class="border border-stone-200 rounded-xl p-5 hover:border-stone-300 transition-all">
+                            <h4 class="font-bold text-stone-800 mb-2">🚌 機場巴士 6021</h4>
+                            <ul class="text-sm text-stone-600 space-y-1">
+                                <li><strong>費用：</strong>7,000 韓元</li>
+                                <li><strong>上車：</strong>忠武路站站牌 (需確認方向)</li>
+                                <li><strong>優點：</strong>直達機場，免地鐵轉乘。</li>
+                            </ul>
+                        </div>
+                        <!-- Option 3: Subway -->
+                        <div class="border border-stone-200 rounded-xl p-5 hover:border-stone-300 transition-all">
+                            <h4 class="font-bold text-stone-800 mb-2">🚇 地鐵 + AREX (最準時)</h4>
+                            <ul class="text-sm text-stone-600 space-y-1">
+                                <li><strong>費用：</strong>約 2,000 韓元</li>
+                                <li><strong>路線：</strong>忠武路站 ➜ 首爾站 ➜ 金浦機場</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="mt-2 text-xs text-rose-600 font-bold bg-rose-50 inline-block px-2 py-1 rounded">⚠️ 注意：回程是金浦機場！</div>
                 </div>
             </div>
 
-            <!-- Hotel Info -->
-            <div class="bg-stone-50 rounded-2xl p-6 border border-stone-200">
-                <div class="flex flex-col md:flex-row gap-6">
-                    <div class="md:w-1/3">
-                        <h3 class="text-lg font-bold text-stone-900">🏨 Wecostay Namsan</h3>
-                        <p class="text-sm text-stone-500 mt-1">地點極佳，忠武路站步行可達。</p>
-                        <button onclick="copyAddress()" class="mt-4 w-full text-left text-xs bg-stone-800 text-white px-4 py-3 rounded-lg hover:bg-stone-700 transition shadow-sm flex items-center justify-between">
-                            <span class="font-bold">📋 複製韓文地址給司機</span>
+            <!-- Tips & Hotel Info -->
+            <div class="bg-stone-900 text-stone-300 rounded-2xl p-6">
+                <div class="flex flex-col md:flex-row gap-6 items-start">
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold text-white mb-3">🏨 Wecostay Namsan</h3>
+                        <p class="text-sm text-stone-400 mb-3">地點極佳，忠武路站步行可達。</p>
+                        <button onclick="copyAddress()" class="w-full sm:w-auto bg-stone-700 hover:bg-stone-600 text-white px-4 py-2 rounded-lg text-sm transition flex items-center justify-center gap-2">
+                            <span>📋</span> 複製韓文地址給司機
                         </button>
                     </div>
-                    <div class="md:w-2/3 space-y-3">
-                        <div class="bg-white p-3 rounded-lg border border-stone-200">
-                            <h4 class="font-bold text-stone-800 text-sm">🚌 機場巴士 (推薦)</h4>
-                            <p class="text-sm text-stone-600">在仁川機場搭乘 <strong>6015</strong> 或 <strong>6001</strong> 號巴士，於「忠武路站 (Chungmuro Station)」下車。步行約 3-5 分鐘。</p>
-                        </div>
-                        <div class="bg-white p-3 rounded-lg border border-stone-200">
-                            <h4 class="font-bold text-stone-800 text-sm">🚇 地鐵交通</h4>
-                            <p class="text-sm text-stone-600">位於地鐵 <strong>3號線/4號線</strong> 交會的忠武路站，去明洞(1站)、東大門(2站)、景福宮(3站)都超快。</p>
-                        </div>
+                    <div class="flex-1 border-t md:border-t-0 md:border-l border-stone-700 pt-4 md:pt-0 md:pl-6">
+                        <h3 class="text-lg font-bold text-white mb-3">💡 交通小貼士</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex gap-2"><span class="text-xl">📱</span> <div><strong>Naver Map</strong>：必備！Google Maps 在韓國僅供參考。</div></li>
+                            <li class="flex gap-2"><span class="text-xl">💳</span> <div><strong>T-money / WOWPASS</strong>：機場抵達即購買。忠武路附近有 WOWPASS 機台。</div></li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -246,49 +378,52 @@
     </section>
 
     <!-- Shopping Guide Section -->
-    <section id="shopping" class="bg-stone-900 text-stone-50 py-12">
+    <section id="shopping" class="bg-white py-12">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-2xl font-bold text-white mb-8 flex items-center">
-                <span class="bg-stone-700 text-yellow-400 p-2 rounded-lg mr-3 text-xl">🛍️</span>
+            <h2 class="text-2xl font-bold text-stone-900 mb-8 flex items-center">
+                <span class="bg-yellow-100 text-yellow-600 p-2 rounded-lg mr-3 text-xl">🛍️</span>
                 您的購物戰區重點
             </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <!-- Seongsu -->
-                <div class="bg-stone-800 rounded-xl p-6 border border-stone-700">
-                    <h3 class="text-lg font-bold text-rose-300 mb-4">聖水洞 Seongsu</h3>
-                    <p class="text-xs text-stone-400 mb-4">Day 3 重點：工業風潮流</p>
-                    <ul class="space-y-3 text-sm">
-                        <li class="flex items-center"><span class="w-2 h-2 bg-rose-500 rounded-full mr-2"></span>Matin Kim (必買鐵牌錢包)</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-rose-500 rounded-full mr-2"></span>Marithé François Girbaud</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-rose-500 rounded-full mr-2"></span>Tamburins (香氛護手霜)</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-rose-500 rounded-full mr-2"></span>ADER Error (潮牌體驗館)</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-stone-500 rounded-full mr-2"></span>LCDC SEOUL (複合式商場)</li>
+                <div class="bg-white rounded-xl p-6 border border-rose-100 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-rose-50 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
+                    <h3 class="text-lg font-bold text-rose-600 mb-2 relative z-10">聖水洞 Seongsu</h3>
+                    <p class="text-xs text-stone-500 mb-4 relative z-10 font-medium bg-rose-50 inline-block px-2 py-1 rounded">Day 3 重點：工業風潮流</p>
+                    <ul class="space-y-3 text-sm relative z-10">
+                        <li class="flex items-center text-stone-600"><span class="w-1.5 h-1.5 bg-rose-400 rounded-full mr-2"></span>Matin Kim (必買鐵牌錢包)</li>
+                        <li class="flex items-center text-stone-600"><span class="w-1.5 h-1.5 bg-rose-400 rounded-full mr-2"></span>Marithé François Girbaud</li>
+                        <li class="flex items-center text-stone-600"><span class="w-1.5 h-1.5 bg-rose-400 rounded-full mr-2"></span>Tamburins (香氛護手霜)</li>
+                        <li class="flex items-center text-stone-600"><span class="w-1.5 h-1.5 bg-rose-400 rounded-full mr-2"></span>ADER Error (潮牌體驗館)</li>
+                        <li class="flex items-center text-stone-600"><span class="w-1.5 h-1.5 bg-stone-300 rounded-full mr-2"></span>LCDC SEOUL (複合式商場)</li>
                     </ul>
                 </div>
 
                 <!-- Hongdae/Yeonnam -->
-                <div class="bg-stone-800 rounded-xl p-6 border border-stone-700">
-                    <h3 class="text-lg font-bold text-blue-300 mb-4">弘大 & 延南洞</h3>
-                    <p class="text-xs text-stone-400 mb-4">Day 4 重點：年輕活力</p>
-                    <ul class="space-y-3 text-sm">
-                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>AK Plaza (偶像周邊)</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>Object (文創小物)</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>Gentle Monster 旗艦店</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>Shoopen (平價鞋)</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-stone-500 rounded-full mr-2"></span>延南洞文青選物店</li>
+                <div class="bg-white rounded-xl p-6 border border-blue-100 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-blue-50 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
+                    <h3 class="text-lg font-bold text-blue-600 mb-2 relative z-10">弘大 & 延南洞</h3>
+                    <p class="text-xs text-stone-500 mb-4 relative z-10 font-medium bg-blue-50 inline-block px-2 py-1 rounded">Day 4 重點：年輕活力</p>
+                    <ul class="space-y-3 text-sm relative z-10">
+                        <li class="flex items-center text-stone-600"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></span>AK Plaza (偶像周邊)</li>
+                        <li class="flex items-center text-stone-600"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></span>Object (文創小物)</li>
+                        <li class="flex items-center text-stone-600"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></span>Gentle Monster 旗艦店</li>
+                        <li class="flex items-center text-stone-600"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></span>Shoopen (平價鞋)</li>
+                        <li class="flex items-center text-stone-600"><span class="w-1.5 h-1.5 bg-stone-300 rounded-full mr-2"></span>延南洞文青選物店</li>
                     </ul>
                 </div>
 
                 <!-- The Hyundai / Dept -->
-                <div class="bg-stone-800 rounded-xl p-6 border border-stone-700">
-                    <h3 class="text-lg font-bold text-purple-300 mb-4">百貨與免稅</h3>
-                    <p class="text-xs text-stone-400 mb-4">Day 5 重點：一站式補貨</p>
-                    <ul class="space-y-3 text-sm">
-                        <li class="flex items-center"><span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>The Hyundai Seoul (B2 潮牌)</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>Olive Young (美妝補貨)</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>Nice Weather (生活雜貨)</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>NYU NYU (東大門飾品批發)</li>
+                <div class="bg-white rounded-xl p-6 border border-purple-100 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-purple-50 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
+                    <h3 class="text-lg font-bold text-purple-600 mb-2 relative z-10">百貨與免稅</h3>
+                    <p class="text-xs text-stone-500 mb-4 relative z-10 font-medium bg-purple-50 inline-block px-2 py-1 rounded">Day 5 重點：一站式補貨</p>
+                    <ul class="space-y-3 text-sm relative z-10">
+                        <li class="flex items-center text-stone-600"><span class="w-1.5 h-1.5 bg-purple-400 rounded-full mr-2"></span>The Hyundai Seoul (B2 潮牌)</li>
+                        <li class="flex items-center text-stone-600"><span class="w-1.5 h-1.5 bg-purple-400 rounded-full mr-2"></span>Olive Young (美妝補貨)</li>
+                        <li class="flex items-center text-stone-600"><span class="w-1.5 h-1.5 bg-purple-400 rounded-full mr-2"></span>Nice Weather (生活雜貨)</li>
+                        <li class="flex items-center text-stone-600"><span class="w-1.5 h-1.5 bg-purple-400 rounded-full mr-2"></span>NYU NYU (東大門飾品批發)</li>
                     </ul>
                 </div>
             </div>
@@ -296,32 +431,35 @@
     </section>
 
     <!-- Apps & Tips -->
-    <section class="max-w-4xl mx-auto px-4 py-12 sm:px-6 lg:px-8 border-t border-stone-200">
-        <h2 class="text-2xl font-bold text-stone-900 mb-6">實用 APP 與小撇步</h2>
+    <section class="max-w-4xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-bold text-stone-900 mb-6 flex items-center">
+            <span class="bg-stone-100 text-stone-600 p-2 rounded-lg mr-3 text-xl">💡</span>
+            實用 APP 與小撇步
+        </h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div class="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm">
-                <div class="text-3xl">🗺️</div>
+            <div class="flex items-start gap-4 p-5 bg-white rounded-2xl shadow-sm border border-stone-100 hover:border-stone-200 transition-colors">
+                <div class="text-3xl bg-stone-50 p-2 rounded-xl">🗺️</div>
                 <div>
                     <h4 class="font-bold text-stone-900">地圖導航</h4>
                     <p class="text-sm text-stone-600 mt-1">Google Maps 在韓國不好用！請下載 <strong>Naver Map</strong> 或 <strong>Kakao Map</strong>。Naver Map 支援簡體中文介面。</p>
                 </div>
             </div>
-            <div class="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm">
-                <div class="text-3xl">🚕</div>
+            <div class="flex items-start gap-4 p-5 bg-white rounded-2xl shadow-sm border border-stone-100 hover:border-stone-200 transition-colors">
+                <div class="text-3xl bg-stone-50 p-2 rounded-xl">🚕</div>
                 <div>
                     <h4 class="font-bold text-stone-900">叫車服務</h4>
                     <p class="text-sm text-stone-600 mt-1">可以直接使用台灣的 <strong>Uber</strong> App 叫車，會自動媒合當地計程車，免去溝通與付款困擾。</p>
                 </div>
             </div>
-            <div class="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm">
-                <div class="text-3xl">❄️</div>
+            <div class="flex items-start gap-4 p-5 bg-white rounded-2xl shadow-sm border border-stone-100 hover:border-stone-200 transition-colors">
+                <div class="text-3xl bg-stone-50 p-2 rounded-xl">❄️</div>
                 <div>
                     <h4 class="font-bold text-stone-900">二月天氣</h4>
                     <p class="text-sm text-stone-600 mt-1">非常冷 (-5°C)。室內暖氣強。建議穿搭：發熱衣 + 衛衣 + <strong>容易穿脫的厚羽絨外套</strong>。手套與毛帽必備。</p>
                 </div>
             </div>
-            <div class="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm">
-                <div class="text-3xl">💰</div>
+            <div class="flex items-start gap-4 p-5 bg-white rounded-2xl shadow-sm border border-stone-100 hover:border-stone-200 transition-colors">
+                <div class="text-3xl bg-stone-50 p-2 rounded-xl">💰</div>
                 <div>
                     <h4 class="font-bold text-stone-900">退稅 Tax Refund</h4>
                     <p class="text-sm text-stone-600 mt-1">大部分店家消費滿 30,000 韓元可退稅。記得隨身攜帶護照。</p>
@@ -334,294 +472,6 @@
         <p>© 2026 Seoul Efficient Travel Planner. </p>
     </footer>
 
-    <script>
-        // Currency Calculator Logic
-        const rateInput = document.getElementById('exchangeRate');
-        const twdInput = document.getElementById('inputTWD');
-        const krwInput = document.getElementById('inputKRW');
-        const displayRateText = document.getElementById('displayRateText');
-
-        function updateCalc(source) {
-            const rate = parseFloat(rateInput.value) || 0;
-            displayRateText.innerText = rate;
-
-            if (source === 'twd') {
-                const twd = parseFloat(twdInput.value);
-                if (!isNaN(twd)) {
-                    krwInput.value = Math.round(twd * rate);
-                } else {
-                    krwInput.value = '';
-                }
-            } else if (source === 'krw') {
-                const krw = parseFloat(krwInput.value);
-                if (!isNaN(krw)) {
-                    twdInput.value = Math.round(krw / rate);
-                } else {
-                    twdInput.value = '';
-                }
-            } else if (source === 'rate') {
-                if (twdInput.value) {
-                    const twd = parseFloat(twdInput.value);
-                    krwInput.value = Math.round(twd * rate);
-                }
-            }
-        }
-
-        rateInput.addEventListener('input', () => updateCalc('rate'));
-        twdInput.addEventListener('input', () => updateCalc('twd'));
-        krwInput.addEventListener('input', () => updateCalc('krw'));
-
-
-        // --- DETAILED ITINERARY DATA ---
-        const itineraryData = [
-            {
-                day: 1,
-                date: "2/04 (三)",
-                title: "入境首爾 & 明洞換匯",
-                focus: "Logistics & Cash",
-                details: [
-                    { time: "11:10", icon: "🛬", title: "抵達仁川機場 (ICN) T2", desc: "CI 0160 抵達。通關約需 1-1.5 小時。領完行李後，尋找 **機場巴士 6015** 售票處或刷 T-money 卡。" },
-                    { time: "13:00", icon: "🚌", title: "前往飯店", desc: "搭乘機場巴士 6015 (約 80 分鐘) 直達「忠武路站」。若 3 人以上建議直接叫 **Uber** (約 7-8 萬韓元，省力)。" },
-                    { time: "15:00", icon: "🏨", title: "Wecostay Namsan Check-in", desc: "寄放行李或辦理入住。稍作休息，整理輕便包包準備出門。" },
-                    { time: "16:00", icon: "💰", title: "明洞換錢 (重要)", desc: "搭地鐵 1 站或步行至明洞。前往 **大使館換錢所** 或 **一品香** (匯率最好)。換完錢手上有現金才安心。" },
-                    { time: "17:30", icon: "🦀", title: "晚餐：Odarijip (醬蟹)", desc: "許願清單 A8：**오다리집 간장게장 명동2호점**。享受第一頓韓式醬蟹 (建議先用 Google Map 確認當日排隊狀況)。" },
-                    { time: "19:00", icon: "🛍️", title: "明洞商圈掃街", desc: "Olive Young 明洞旗艦店 (先看貨不一定要全買)、ABC Mart、路邊攤小吃 (雞蛋糕、糖餅)。" },
-                    { time: "21:00", icon: "🥩", title: "宵夜備案：Taecho Galbi", desc: "許願清單 A12：若晚餐沒吃飽，可去 **태초갈비 명동점** 吃烤排骨。" }
-                ]
-            },
-            {
-                day: 2,
-                date: "2/05 (四)",
-                title: "倫敦貝果 & 韓服體驗",
-                focus: "Culture & Hotspots",
-                details: [
-                    { time: "07:30", icon: "🥯", title: "London Bagel Museum (安國)", desc: "許願清單 A10：**早起排隊戰**。搭地鐵 3 號線至安國站。先去抽號碼牌 (CatchTable)。如果等待時間長，先去下一站。" },
-                    { time: "09:00", icon: "👘", title: "韓服租借：Yes Hanbok", desc: "許願清單 B1：前往 **Yes Hanbok** (近景福宮站)。換上美美的韓服，把頭髮編好。" },
-                    { time: "10:30", icon: "📸", title: "景福宮 (Gyeongbokgung)", desc: "穿韓服免費入場。避開了週二公休。必拍：光化門、慶會樓。在古宮中留下人生美照。" },
-                    { time: "12:30", icon: "🐔", title: "午餐：土俗村蔘雞湯", desc: "許願清單 A3：歸還韓服後，步行至 **土俗村**。觀光客必吃，但翻桌率快。人蔘酒暖身。" },
-                    { time: "14:30", icon: "🍜", title: "下午茶/點心：Silla Jemyun", desc: "許願清單 A7：**신라제면 안국점** (辣刀削麵)。如果午餐吃太飽，這餐可改為純逛街或喝咖啡 (Onion/Dotori Garden)。" },
-                    { time: "16:00", icon: "🏘️", title: "北村 & 三清洞", desc: "沿著石牆路散步，逛逛三清洞的精緻選物店與畫廊。" },
-                    { time: "18:00", icon: "🏮", title: "益善洞 (Ikseondong)", desc: "搭地鐵至鐘路3街。逛益善洞韓屋村的小店。這裡有很多飾品店與復古洋裝店。" }
-                ]
-            },
-            {
-                day: 3,
-                date: "2/06 (五)",
-                title: "聖水洞：潮牌與文青麵包",
-                focus: "Trend Shopping",
-                details: [
-                    { time: "10:00", icon: "🍞", title: "早午餐：Standard Bread", desc: "許願清單 A1：前往聖水洞，第一站 **스탠다드브레드 성수**。享受超人氣吐司與咖啡。" },
-                    { time: "11:30", icon: "✨", title: "聖水洞地標巡禮", desc: "Dior Seongsu (外觀打卡)、Tamburins (香氛)、Kinfolk。這一區非常好拍。" },
-                    { time: "13:00", icon: "🍲", title: "午餐：Muguok (武橋)", desc: "許願清單 A11：**무구옥** (湯飯)。如果想吃西式，聖水洞也有很多義大利麵選擇。" },
-                    { time: "14:30", icon: "🛍️", title: "深度購物：Matin Kim & More", desc: "逛 House of Byne (Matin Kim), Marithe, ADER Error, LCDC 複合文化空間。錢包請準備好！" },
-                    { time: "17:30", icon: "☕", title: "下午茶/休息", desc: "聖水洞咖啡廳極多，隨意挑選一家順眼的 (如: Grandpa Factory, Onion Seongsu)。" },
-                    { time: "19:00", icon: "🚇", title: "返回飯店/忠武路", desc: "提著戰利品回飯店放。" },
-                    { time: "20:30", icon: "🍗", title: "宵夜：BHC 炸雞", desc: "許願清單 C5：**BHC치킨 충무로역점**。離住宿點超近，走路去吃 Buringcle (起司粉炸雞) 配啤酒。" }
-                ]
-            },
-            {
-                day: 4,
-                date: "2/07 (六)",
-                title: "弘大延南洞：醬蟹與派",
-                focus: "Foodie & Youth",
-                details: [
-                    { time: "11:00", icon: "🦀", title: "早午餐：真味食堂 (Jinmi)", desc: "許願清單 A2：**진미식당** (麻浦區)。*務必提前請飯店或信用秘書預約*。米其林推薦醬蟹。若訂不到改去弘大吃其他醬蟹。" },
-                    { time: "13:00", icon: "🥧", title: "甜點：Parole & Langue", desc: "許願清單 A6：**파롤앤랑그** (延南洞)。非常有名的玉米派/栗子派。延南洞還有很多文創小店可逛。" },
-                    { time: "15:00", icon: "🛍️", title: "弘大商圈 (Hongdae)", desc: "從延南洞走回弘大入口站。逛 AK Plaza, Gentle Monster, Shoopen, Object, Butter。" },
-                    { time: "17:00", icon: "☕", title: "咖啡：Gobongdang", desc: "許願清單 A9：**고봉당 혜화** (如果是在大學路分店，需搭地鐵前往；若只想在弘大，可改去延南洞其他咖啡廳)。建議留在弘大繼續逛。" },
-                    { time: "19:00", icon: "🥩", title: "晚餐：The Giwa Hapjeong", desc: "許願清單 A4：**더기와 합정점**。在合井站附近的精緻烤肉店，環境比弘大一般烤肉店好，適合好好吃肉。" },
-                    { time: "21:00", icon: "🎤", title: "弘大 Busking", desc: "週六晚上的弘大步行街最熱鬧，看完街頭表演後回飯店。" }
-                ]
-            },
-            {
-                day: 5,
-                date: "2/08 (日)",
-                title: "汝矣島百貨 & 東大門",
-                focus: "Last Shopping",
-                details: [
-                    { time: "10:30", icon: "🏢", title: "The Hyundai Seoul", desc: "搭地鐵至汝矣島站。首爾最大百貨。**B2 Creative Ground** 是年輕潮牌大本營 (Thisisneverthat, Nice Weather)。" },
-                    { time: "13:00", icon: "🍔", title: "午餐：百貨內美食", desc: "推薦 Five Guys (B1) 或其他美食街排隊名店。記得先用機器候位。" },
-                    { time: "16:00", icon: "🍜", title: "晚餐：Hani Kalguksu", desc: "許願清單 A5：**하니칼국수** (新堂站)。非常有名的魚卵刀削麵，外觀很復古。" },
-                    { time: "18:00", icon: "💎", title: "東大門飾品批發", desc: "前往 **NYU NYU** 或 **Mimi Line** (新堂站走過去不遠)。整棟的飾品牆，價格便宜，適合買回來送人。" },
-                    { time: "20:00", icon: "🛒", title: "最後補貨", desc: "如果還有力氣，可去附近的 DDP 設計廣場拍照。" },
-                    { time: "22:00", icon: "🍯", title: "最後宵夜：Kyochon 炸雞", desc: "許願清單 C1/C2：回到飯店，請櫃檯幫忙或用 Uber Eats 叫 **Kyochon (橋村)** 蜂蜜炸雞外送。完美 Ending。" }
-                ]
-            },
-            {
-                day: 6,
-                date: "2/09 (一)",
-                title: "打包返程 (金浦機場)",
-                focus: "Departure",
-                details: [
-                    { time: "09:00", icon: "📦", title: "Check-out", desc: "辦理退房。確認護照、錢包、隨身電源。" },
-                    { time: "09:30", icon: "🚕", title: "前往金浦機場 (GMP)", desc: "請注意：**回程是金浦，不是仁川！** 建議搭 **Uber/計程車** (約 40 分鐘) 或地鐵 5 號線 (乙支路4街->金浦機場)。" },
-                    { time: "10:30", icon: "🛂", title: "機場報到 & 退稅", desc: "華航 CI 0261 (13:45 起飛)。金浦機場人較少，但仍建議提早處理退稅單據 (Kiosk 掃描)。" },
-                    { time: "12:00", icon: "🍽️", title: "機場午餐", desc: "金浦機場樂天購物中心 (Lotte Mall) 就連著機場，如果有時間可以在那邊吃最後午餐。" },
-                    { time: "13:45", icon: "✈️", title: "飛機起飛", desc: "帶著滿滿的戰利品與回憶，飛往台北松山 (TSA)。" }
-                ]
-            }
-        ];
-
-        // Chart.js Configuration
-        function initCharts() {
-            // Energy Chart
-            const ctxEnergy = document.getElementById('energyChart').getContext('2d');
-            new Chart(ctxEnergy, {
-                type: 'bar',
-                data: {
-                    labels: ['Day 1 (明洞)', 'Day 2 (北村)', 'Day 3 (聖水)', 'Day 4 (弘大)', 'Day 5 (百貨)', 'Day 6'],
-                    datasets: [
-                        {
-                            label: '步行步數強度',
-                            data: [60, 95, 85, 75, 90, 30], // Day 2 & 5 are highest
-                            backgroundColor: '#f43f5e',
-                            borderRadius: 4
-                        },
-                        {
-                            label: '美食熱量攝取',
-                            data: [50, 60, 70, 90, 60, 20], // Day 4 highest (Crab + BBQ)
-                            backgroundColor: '#fbbf24',
-                            borderRadius: 4
-                        }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        y: { display: false },
-                        x: { grid: { display: false } }
-                    },
-                    plugins: { legend: { position: 'bottom' } }
-                }
-            });
-
-            // Category Chart
-            const ctxCategory = document.getElementById('categoryChart').getContext('2d');
-            new Chart(ctxCategory, {
-                type: 'doughnut',
-                data: {
-                    labels: ['逛街 Shopping', '美食 Food', '觀光/體驗 Culture', '交通/其他'],
-                    datasets: [{
-                        data: [45, 30, 15, 10],
-                        backgroundColor: ['#f43f5e', '#fbbf24', '#3b82f6', '#e5e7eb'],
-                        borderWidth: 0
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: { legend: { position: 'right' } }
-                }
-            });
-        }
-
-        // Itinerary Rendering Logic
-        let currentDayIndex = 0;
-
-        function renderDayTabs() {
-            const tabsContainer = document.getElementById('dayTabs');
-            tabsContainer.innerHTML = '';
-            
-            itineraryData.forEach((day, index) => {
-                const isSelected = index === currentDayIndex;
-                const btn = document.createElement('button');
-                // Updated Button Styling
-                btn.className = `flex-shrink-0 px-6 py-4 rounded-xl text-left transition-all duration-200 border-2 min-w-[120px] ${
-                    isSelected 
-                    ? 'bg-rose-500 border-rose-500 text-white shadow-lg transform -translate-y-1' 
-                    : 'bg-white border-stone-200 text-stone-500 hover:border-rose-300 hover:text-rose-500'
-                }`;
-                btn.innerHTML = `
-                    <span class="block text-xs font-bold uppercase opacity-80 mb-1">Day ${day.day}</span>
-                    <span class="block text-sm font-bold truncate">${day.date.split(' ')[0]}</span>
-                `;
-                btn.onclick = () => {
-                    currentDayIndex = index;
-                    renderDayTabs();
-                    renderItineraryContent();
-                };
-                tabsContainer.appendChild(btn);
-            });
-        }
-
-        function renderItineraryContent() {
-            const contentContainer = document.getElementById('itineraryContent');
-            const data = itineraryData[currentDayIndex];
-            
-            let html = `
-                <div class="p-8 bg-gradient-to-r from-stone-50 to-white border-b border-stone-100">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <h3 class="text-3xl font-bold text-stone-900 mb-2">${data.title}</h3>
-                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-rose-100 text-rose-800">
-                                ✨ 今日重點：${data.focus}
-                            </span>
-                        </div>
-                        <div class="hidden sm:block text-5xl opacity-20 filter grayscale transform rotate-12">
-                            ${currentDayIndex === 0 ? '✈️' : currentDayIndex === 2 ? '🛍️' : currentDayIndex === 3 ? '🦀' : '🇰🇷'}
-                        </div>
-                    </div>
-                </div>
-                <div class="p-6 sm:p-8 relative">
-                    <!-- Data Loop -->
-                    <div class="space-y-0">
-            `;
-
-            data.details.forEach((item, index) => {
-                const isLast = index === data.details.length - 1;
-                html += `
-                    <div class="relative pl-16 pb-8 ${isLast ? 'last-item' : ''}">
-                        <!-- Timeline Line -->
-                        <div class="timeline-line"></div>
-                        
-                        <!-- Icon -->
-                        <div class="absolute left-0 top-0 w-12 h-12 rounded-full bg-white border-2 border-rose-100 text-2xl flex items-center justify-center shadow-sm z-10">
-                            ${item.icon}
-                        </div>
-
-                        <!-- Content -->
-                        <div class="pt-1">
-                            <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3 mb-2">
-                                <span class="font-bold text-rose-500 font-mono text-lg">${item.time}</span>
-                                <h4 class="font-bold text-stone-900 text-lg">${item.title}</h4>
-                            </div>
-                            <div class="bg-stone-50 rounded-xl p-4 border border-stone-100 text-stone-600 text-sm leading-relaxed hover:bg-white hover:shadow-md transition-all duration-200">
-                                ${item.desc}
-                            </div>
-                        </div>
-                    </div>
-                `;
-            });
-
-            html += `</div></div>`;
-            contentContainer.innerHTML = html;
-        }
-
-        // Scroll helper
-        function scrollToSection(id) {
-            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // Address Copy
-        function copyAddress() {
-            const address = "위코스테이 남산\n\n[舊式] 서울 중구 필동1가 43-1\n[新式] 서울 중구 충무로 3";
-            const el = document.createElement('textarea');
-            el.value = address;
-            document.body.appendChild(el);
-            el.select();
-            document.execCommand('copy');
-            document.body.removeChild(el);
-            alert("✅ 地址已複製！\n\n" + address);
-        }
-
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
-            initCharts();
-            renderDayTabs();
-            renderItineraryContent();
-        });
-
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
