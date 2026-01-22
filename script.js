@@ -316,7 +316,6 @@ const itineraryData = [
 
 // Chart.js Configuration
 
-
 // Itinerary Rendering Logic
 let currentDayIndex = 0;
 
@@ -419,7 +418,21 @@ function copyAddress() {
 
 // Initialize
 document.addEventListener("DOMContentLoaded", () => {
-
   renderDayTabs();
   renderItineraryContent();
 });
+
+// Back to Top Logic
+const backToTopBtn = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    backToTopBtn.classList.remove("opacity-0", "translate-y-10");
+  } else {
+    backToTopBtn.classList.add("opacity-0", "translate-y-10");
+  }
+});
+
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}

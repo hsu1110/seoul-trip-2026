@@ -22,7 +22,7 @@
                 <div class="hidden md:flex space-x-8">
                     <button onclick="scrollToSection('logistics')" class="text-stone-600 hover:text-rose-500 transition-colors text-sm font-medium">交通住宿</button>
                     <button onclick="scrollToSection('itinerary')" class="text-stone-600 hover:text-rose-500 transition-colors text-sm font-medium">每日行程</button>
-                    <button onclick="scrollToSection('shopping')" class="text-stone-600 hover:text-rose-500 transition-colors text-sm font-medium">逛街攻略</button>
+                    <button onclick="scrollToSection('shopping')" class="text-stone-600 hover:text-rose-500 transition-colors text-sm font-medium">逛街攻略&小工具</button>
                 </div>
                 <div class="text-xs text-stone-400 font-mono">2026/02/04 - 02/09</div>
             </div>
@@ -30,7 +30,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <div class="bg-white border-b border-stone-100">
+    <div class="border-b border-stone-100">
         <div class="max-w-4xl mx-auto px-4 py-12 sm:px-6 lg:px-8 text-center">
             <span class="inline-block px-3 py-1 rounded-full bg-rose-100 text-rose-600 text-xs font-semibold tracking-wide uppercase mb-4">Shopaholic & Foodie Trip</span>
             <h1 class="text-4xl sm:text-5xl font-extrabold text-stone-900 mb-4 leading-tight">首爾 6 天 5 夜<br><span class="text-rose-500">購物美食高效率攻略</span></h1>
@@ -51,209 +51,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Currency Calculator Section -->
-    <section class="max-w-4xl mx-auto px-4 py-10 sm:px-6 lg:px-8">
-        <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 relative overflow-hidden">
-            <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-emerald-50 rounded-full opacity-50 blur-xl"></div>
-            
-            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 relative z-10">
-                <h2 class="text-2xl font-bold text-stone-900 flex items-center">
-                    <span class="bg-emerald-100 text-emerald-600 p-2 rounded-lg mr-3 text-xl">💱</span>
-                    購物匯率計算機
-                </h2>
-                <div class="mt-2 sm:mt-0 text-xs font-medium text-stone-500 bg-stone-100 px-3 py-1 rounded-full">
-                    預設：1 TWD ≈ <span id="displayRateText">45.28</span> KRW
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-end relative z-10">
-                <div>
-                    <label class="block text-xs font-bold text-stone-500 uppercase tracking-wide mb-2">匯率 (TWD ➜ KRW)</label>
-                    <div class="relative group">
-                        <input type="number" id="exchangeRate" value="45.28" step="0.1" class="w-full p-3 pr-20 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 font-mono font-bold focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all group-hover:bg-white">
-                        <div class="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 text-xs font-medium pointer-events-none">KRW/TWD</div>
-                    </div>
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-stone-500 uppercase tracking-wide mb-2">台幣 (TWD)</label>
-                    <div class="relative group">
-                        <span class="absolute left-3 top-1/2 -translate-y-1/2 text-stone-400 font-serif italic">NT$</span>
-                        <input type="number" id="inputTWD" placeholder="輸入台幣" class="w-full p-3 pl-12 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 font-mono font-bold focus:outline-none focus:ring-2 focus:ring-rose-500 transition-all group-hover:bg-white">
-                    </div>
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-stone-500 uppercase tracking-wide mb-2">韓幣 (KRW)</label>
-                    <div class="relative group">
-                        <span class="absolute left-3 top-1/2 -translate-y-1/2 text-stone-400 font-serif italic">₩</span>
-                        <input type="number" id="inputKRW" placeholder="輸入韓幣" class="w-full p-3 pl-10 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 font-mono font-bold focus:outline-none focus:ring-2 focus:ring-rose-500 transition-all group-hover:bg-white">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Taiwan Pay Section -->
-    <section class="max-w-4xl mx-auto px-4 pb-10 sm:px-6 lg:px-8">
-        <div class="bg-gradient-to-br from-red-50 to-blue-50 p-6 rounded-2xl shadow-sm border border-red-100 relative overflow-hidden">
-            <div class="absolute top-0 right-0 p-4 opacity-10">
-                <span class="text-9xl font-bold text-red-500">PAY</span>
-            </div>
-            
-            <div class="relative z-10">
-                <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
-                    <div>
-                        <h2 class="text-2xl font-bold text-stone-900 flex items-center gap-3">
-                            <span class="bg-red-500 text-white p-2 rounded-lg text-xl">🇹🇼</span>
-                            <span>Taiwan Pay 韓國支付攻略</span>
-                        </h2>
-                        <p class="text-red-600 font-bold mt-2 text-sm">✨ 2026/1/1 ~ 3/31 限定：最高 30% 現金回饋！</p>
-                    </div>
-                    <div class="flex gap-2">
-                        <span class="bg-white/80 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-stone-600 border border-stone-200">免手續費</span>
-                        <span class="bg-red-100 px-3 py-1 rounded-full text-xs font-bold text-red-600 border border-red-200">TWQR</span>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Benefits Card -->
-                    <div class="bg-white/80 backdrop-blur rounded-xl p-5 border border-red-100">
-                        <h3 class="font-bold text-stone-800 mb-3 flex items-center gap-2">
-                            <span class="text-red-500">💰</span> 回饋重點 (NT$15,000 封頂)
-                        </h3>
-                        <ul class="space-y-2 text-sm text-stone-600">
-                            <li class="flex justify-between">
-                                <span>基本回饋 (20%)</span>
-                                <span class="font-bold text-stone-900">上限 $2,000</span>
-                            </li>
-                            <li class="flex justify-between">
-                                <span>滿額加碼 (10%)</span>
-                                <span class="font-bold text-stone-900">上限 $1,500</span>
-                            </li>
-                            <li class="pt-2 mt-2 border-t border-dashed border-stone-300 flex justify-between text-red-600 font-bold">
-                                <span>最高可拿</span>
-                                <span>$3,500</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Stores Card -->
-                    <div class="bg-white/80 backdrop-blur rounded-xl p-5 border border-blue-100">
-                        <h3 class="font-bold text-stone-800 mb-3 flex items-center gap-2">
-                            <span class="text-blue-500">🏪</span> 適用通路 (認明 TWQR/BC Card/Paybooc)
-                        </h3>
-                        <div class="flex flex-wrap gap-2 text-xs">
-                            <span class="bg-purple-100 text-purple-700 px-2 py-1 rounded">CU</span>
-                            <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded">GS25</span>
-                            <span class="bg-green-100 text-green-700 px-2 py-1 rounded">7-11</span>
-                            <span class="bg-red-100 text-red-700 px-2 py-1 rounded">大創 Daiso</span>
-                            <span class="bg-yellow-100 text-yellow-700 px-2 py-1 rounded">Ediya Coffee</span>
-                            <span class="bg-stone-100 text-stone-700 px-2 py-1 rounded">巴黎貝甜</span>
-                            <span class="bg-pink-100 text-pink-700 px-2 py-1 rounded">31冰淇淋</span>
-                            <span class="bg-stone-100 text-stone-700 px-2 py-1 rounded">樂天免稅店</span>
-                        </div>
-                        <p class="mt-3 text-xs text-stone-400">⚠️ 自助結帳機請選「BC Card」或「Paybooc」</p>
-                    </div>
-                </div>
-
-                <!-- How to Use -->
-                <div class="mt-6 bg-stone-900 text-stone-300 rounded-xl p-5 text-sm">
-                    <h3 class="font-bold text-white mb-3 flex items-center gap-2">
-                        <span>📱</span> 設定與使用教學
-                    </h3>
-                    <ol class="list-decimal list-inside space-y-2">
-                        <li>下載<strong>「台灣行動支付」App</strong> 或支援的網銀 App (如: 土銀、一銀、兆豐等)。</li>
-                        <li>綁定<strong>銀行帳戶/金融卡</strong> (⚠️ 不支援信用卡)。</li>
-                        <li>確認已開啟「跨國交易」功能。</li>
-                        <li>結帳時打開 App ➜ 點選「跨國交易」➜ 出示 QR Code 給店員掃描。</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- WOWPASS & T-money Section -->
-    <section class="max-w-4xl mx-auto px-4 pb-10 sm:px-6 lg:px-8">
-        <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100">
-            <h2 class="text-2xl font-bold text-stone-900 mb-6 flex items-center">
-                <span class="bg-orange-100 text-orange-600 p-2 rounded-lg mr-3 text-xl">💳</span>
-                支付工具攻略：WOWPASS vs T-money
-            </h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                <!-- WOWPASS -->
-                <div class="border border-orange-200 bg-orange-50/50 rounded-xl p-5">
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-lg font-bold text-orange-600">WOWPASS 卡</h3>
-                        <span class="text-xs font-bold bg-orange-100 text-orange-600 px-2 py-1 rounded">三合一神卡</span>
-                    </div>
-                    <p class="text-sm text-stone-600 mb-4">結合「換匯＋簽帳付款＋T-money交通卡」。適合不想帶大量現金的旅客。</p>
-                    <ul class="space-y-2 text-sm text-stone-600">
-                        <li class="flex gap-2"><span class="text-orange-500">✅</span> <strong>換匯方便：</strong>地鐵站機台直接用台幣儲值。</li>
-                        <li class="flex gap-2"><span class="text-orange-500">✅</span> <strong>NFC 儲值：</strong>用手機 App 就能幫交通卡儲值 (大推！)。</li>
-                        <li class="flex gap-2"><span class="text-orange-500">✅</span> <strong>消費回饋：</strong>星巴克、Olive Young 等品牌有現金回饋。</li>
-                    </ul>
-                    <div class="mt-4 pt-4 border-t border-orange-200">
-                        <h4 class="font-bold text-stone-800 text-sm mb-2">📲 機場領取攻略</h4>
-                        <p class="text-xs text-stone-500">
-                            1. <strong>App 預約 (推薦)</strong>：仁川機場 SKT 櫃檯或 CU 超商領取。<br>
-                            2. <strong>現場購買</strong>：AREX 入口處「WOW Exchange」機台。
-                        </p>
-                    </div>
-                </div>
-
-                <!-- T-money -->
-                <div class="border border-stone-200 bg-stone-50/50 rounded-xl p-5">
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-lg font-bold text-stone-700">T-money 卡</h3>
-                        <span class="text-xs font-bold bg-stone-200 text-stone-600 px-2 py-1 rounded">單純交通卡</span>
-                    </div>
-                    <p class="text-sm text-stone-600 mb-4">韓國最普及的交通卡。適合已有韓幣現金或只搭車的旅客。</p>
-                    <ul class="space-y-2 text-sm text-stone-600">
-                        <li class="flex gap-2"><span class="text-stone-500">✅</span> <strong>購買容易：</strong>機場超商隨買隨用。</li>
-                        <li class="flex gap-2"><span class="text-stone-500">✅</span> <strong>款式多：</strong>有許多偶像/卡通聯名卡面。</li>
-                        <li class="flex gap-2"><span class="text-red-500">⚠️</span> <strong>iPhone 限制：</strong>無法直接用信用卡線上儲值，需去機台付現。</li>
-                    </ul>
-                    <div class="mt-4 pt-4 border-t border-stone-200">
-                        <h4 class="font-bold text-stone-800 text-sm mb-2">💡 專家建議</h4>
-                        <p class="text-xs text-stone-500">
-                            如果您是 iPhone 用戶且不想一直找機台儲值，<strong>強烈建議辦 WOWPASS</strong> 使用 App 的 NFC 儲值功能！
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Comparison Table -->
-            <div class="overflow-x-auto">
-                <table class="w-full text-sm text-left text-stone-600">
-                    <thead class="text-xs text-stone-700 uppercase bg-stone-100">
-                        <tr>
-                            <th class="px-4 py-3 rounded-l-lg">比較項目</th>
-                            <th class="px-4 py-3 text-orange-600">WOWPASS</th>
-                            <th class="px-4 py-3 rounded-r-lg">T-money</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="border-b border-stone-50">
-                            <td class="px-4 py-3 font-medium">主要功能</td>
-                            <td class="px-4 py-3">換匯 + 簽帳 + 交通</td>
-                            <td class="px-4 py-3">純交通卡</td>
-                        </tr>
-                        <tr class="border-b border-stone-50">
-                            <td class="px-4 py-3 font-medium">儲值方式</td>
-                            <td class="px-4 py-3">台幣現金 (機台) / 信用卡 (App)</td>
-                            <td class="px-4 py-3">韓幣現金 (超商/地鐵站)</td>
-                        </tr>
-                        <tr>
-                            <td class="px-4 py-3 font-medium">交通卡儲值</td>
-                            <td class="px-4 py-3 font-bold text-orange-600">可用 App NFC 儲值 (免現金)</td>
-                            <td class="px-4 py-3">需去機台/超商用現金</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
 
     <!-- Logistics Section -->
     <section id="logistics" class="bg-white border-y border-stone-100 py-12">
@@ -349,6 +146,7 @@
                         <ul class="space-y-2 text-sm">
                             <li class="flex gap-2"><span class="text-xl">📱</span> <div><strong>Naver Map</strong>：必備！Google Maps 在韓國僅供參考。</div></li>
                             <li class="flex gap-2"><span class="text-xl">💳</span> <div><strong>T-money / WOWPASS</strong>：機場抵達即購買。忠武路附近有 WOWPASS 機台。</div></li>
+                            <li class="flex gap-2"><span class="text-xl">🎫</span> <div><strong>氣候同行卡</strong>：短期券 (3日 10,000₩) 無限搭地鐵公車，超划算！</div></li>
                         </ul>
                     </div>
                 </div>
@@ -426,6 +224,293 @@
                         <li class="flex items-center text-stone-600"><span class="w-1.5 h-1.5 bg-purple-400 rounded-full mr-2"></span>NYU NYU (東大門飾品批發)</li>
                     </ul>
                 </div>
+            </div>  
+        </div>
+    </section>
+
+    <!-- Currency Calculator Section -->
+    <section class="max-w-4xl mx-auto px-4 py-10 sm:px-6 lg:px-8">
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 relative overflow-hidden">
+            <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-emerald-50 rounded-full opacity-50 blur-xl"></div>
+            
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 relative z-10">
+                <h2 class="text-2xl font-bold text-stone-900 flex items-center">
+                    <span class="bg-emerald-100 text-emerald-600 p-2 rounded-lg mr-3 text-xl">💱</span>
+                    購物匯率計算機
+                </h2>
+                <div class="mt-2 sm:mt-0 text-xs font-medium text-stone-500 bg-stone-100 px-3 py-1 rounded-full">
+                    預設：1 TWD ≈ <span id="displayRateText">45.28</span> KRW
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-end relative z-10">
+                <div>
+                    <label class="block text-xs font-bold text-stone-500 uppercase tracking-wide mb-2">匯率 (TWD ➜ KRW)</label>
+                    <div class="relative group">
+                        <input type="number" id="exchangeRate" value="45.28" step="0.1" class="w-full p-3 pr-20 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 font-mono font-bold focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all group-hover:bg-white">
+                        <div class="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 text-xs font-medium pointer-events-none">KRW/TWD</div>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-stone-500 uppercase tracking-wide mb-2">台幣 (TWD)</label>
+                    <div class="relative group">
+                        <span class="absolute left-3 top-1/2 -translate-y-1/2 text-stone-400 font-serif italic">NT$</span>
+                        <input type="number" id="inputTWD" placeholder="輸入台幣" class="w-full p-3 pl-12 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 font-mono font-bold focus:outline-none focus:ring-2 focus:ring-rose-500 transition-all group-hover:bg-white">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-stone-500 uppercase tracking-wide mb-2">韓幣 (KRW)</label>
+                    <div class="relative group">
+                        <span class="absolute left-3 top-1/2 -translate-y-1/2 text-stone-400 font-serif italic">₩</span>
+                        <input type="number" id="inputKRW" placeholder="輸入韓幣" class="w-full p-3 pl-10 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 font-mono font-bold focus:outline-none focus:ring-2 focus:ring-rose-500 transition-all group-hover:bg-white">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Korea Grand Sale Section -->
+    <section class="bg-white border-y border-stone-100 py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-rose-50 to-pink-50 p-6 rounded-2xl shadow-sm border border-rose-100 relative overflow-hidden">
+                <div class="absolute top-0 right-0 -mt-4 -mr-4 w-32 h-32 bg-rose-200 rounded-full opacity-20 blur-xl"></div>
+                
+                <div class="flex flex-col md:flex-row items-center justify-between mb-8 relative z-10">
+                    <div>
+                        <h2 class="text-2xl font-bold text-stone-900 flex items-center gap-3">
+                            <span class="bg-rose-500 text-white p-2 rounded-lg text-xl">🛍️</span>
+                            <span>2026 韓國購物節攻略</span>
+                        </h2>
+                        <p class="text-rose-600 font-bold mt-2 text-sm">📅 2025/12/17 ~ 2026/02/22 (歷年最大規模！)</p>
+                    </div>
+                    <div class="mt-4 md:mt-0">
+                        <span class="bg-white/80 backdrop-blur px-4 py-2 rounded-full text-sm font-bold text-rose-600 border border-rose-200 shadow-sm">
+                            明洞 = 戰略核心
+                        </span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
+                    <!-- Welcome Center Card -->
+                    <div class="bg-white/90 backdrop-blur rounded-xl p-5 border border-rose-100 shadow-sm">
+                        <h3 class="font-bold text-stone-800 mb-3 flex items-center gap-2">
+                            <span class="text-rose-500">ℹ️</span> 明洞歡迎中心 (必去第一站)
+                        </h3>
+                        <div class="space-y-3 text-sm text-stone-600">
+                            <p><strong>📍 地點：</strong>Noon Square 1樓 (明洞街14號)</p>
+                            <p><strong>⏰ 時間：</strong>每日 11:00 – 20:00</p>
+                            <div class="bg-rose-50 p-3 rounded-lg border border-rose-100">
+                                <p class="font-bold text-rose-700 mb-1">🎁 專屬好禮：</p>
+                                <ul class="list-disc list-inside space-y-1 text-xs">
+                                    <li><strong>歡迎優惠券包：</strong>追蹤 SNS 即可領取</li>
+                                    <li><strong>消費滿額抽獎：</strong>憑中區/明洞滿 5萬韓元收據可抽獎</li>
+                                    <li><strong>免費服務：</strong>翻譯、Wi-Fi、休息區</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Department Store Discounts -->
+                    <div class="bg-white/90 backdrop-blur rounded-xl p-5 border border-rose-100 shadow-sm">
+                        <h3 class="font-bold text-stone-800 mb-3 flex items-center gap-2">
+                            <span class="text-rose-500">🏬</span> 百貨免稅店優惠
+                        </h3>
+                        <ul class="space-y-3 text-sm text-stone-600">
+                            <li class="flex items-start gap-2">
+                                <span class="bg-stone-100 text-stone-600 text-xs px-1.5 py-0.5 rounded mt-0.5">新世界</span>
+                                <span>金卡升等 (15% OFF) + 滿額折抵 (最高折 6萬韓元) + 贈牙刷組</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="bg-stone-100 text-stone-600 text-xs px-1.5 py-0.5 rounded mt-0.5">樂天</span>
+                                <span>時尚美妝滿 10萬回饋 2萬 (20%!) + 餐飲滿 5萬送 1萬</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="bg-stone-100 text-stone-600 text-xs px-1.5 py-0.5 rounded mt-0.5">新羅</span>
+                                <span>Creatrip 合作最高 10萬韓元折價券 + S.Rewards</span>
+                            </li>
+                        </ul>
+                        <div class="mt-3 pt-3 border-t border-dashed border-stone-200">
+                            <p class="text-xs text-stone-500">💡 <strong>Olive Young 明洞旗艦店</strong> 也有特定品牌 1+1 或贈品活動！</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Strategy Summary -->
+                <div class="mt-6 bg-stone-900 text-stone-300 rounded-xl p-5 text-sm relative z-10">
+                    <h3 class="font-bold text-white mb-3 flex items-center gap-2">
+                        <span>📝</span> 購物節戰略總結
+                    </h3>
+                    <ol class="list-decimal list-inside space-y-2">
+                        <li>抵達後先去 <strong>Noon Square 歡迎中心</strong> 領取優惠券包。</li>
+                        <li>消費優先用 <strong>Taiwan Pay (20%回饋)</strong> 或 WOWPASS。</li>
+                        <li>保留所有明洞商圈收據，滿 5萬韓元回歡迎中心 <strong>抽獎</strong>。</li>
+                        <li>記得隨身攜帶護照，單筆滿 15,000 韓元即享 <strong>現場退稅</strong>。</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Taiwan Pay Section -->
+    <section class="max-w-4xl mx-auto px-4 pb-10 sm:px-6 lg:px-8">
+        <div class="bg-gradient-to-br from-red-50 to-blue-50 p-6 rounded-2xl shadow-sm border border-red-100 relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-4 opacity-10">
+                <span class="text-9xl font-bold text-red-500">PAY</span>
+            </div>
+            
+            <div class="relative z-10">
+                <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+                    <div>
+                        <h2 class="text-2xl font-bold text-stone-900 flex items-center gap-3">
+                            <span class="bg-red-500 text-white p-2 rounded-lg text-xl">🇹🇼</span>
+                            <span>Taiwan Pay 韓國支付攻略</span>
+                        </h2>
+                        <p class="text-red-600 font-bold mt-2 text-sm">✨ 2026/1/1 ~ 3/31 限定：最高 30% 現金回饋！</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <span class="bg-white/80 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-stone-600 border border-stone-200">免手續費</span>
+                        <span class="bg-red-100 px-3 py-1 rounded-full text-xs font-bold text-red-600 border border-red-200">TWQR</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Benefits Card -->
+                    <div class="bg-white/80 backdrop-blur rounded-xl p-5 border border-red-100">
+                        <h3 class="font-bold text-stone-800 mb-3 flex items-center gap-2">
+                            <span class="text-red-500">💰</span> 回饋重點 (NT$15,000 封頂)
+                        </h3>
+                        <ul class="space-y-2 text-sm text-stone-600">
+                            <li class="flex justify-between">
+                                <span>基本回饋 (20%)</span>
+                                <span class="font-bold text-stone-900">上限 $2,000</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>滿額加碼 (10%)</span>
+                                <span class="font-bold text-stone-900">上限 $1,500</span>
+                            </li>
+                            <li class="pt-2 mt-2 border-t border-dashed border-stone-300 flex justify-between text-red-600 font-bold">
+                                <span>最高可拿</span>
+                                <span>$3,500</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Stores Card -->
+                    <div class="bg-white/80 backdrop-blur rounded-xl p-5 border border-blue-100">
+                        <h3 class="font-bold text-stone-800 mb-3 flex items-center gap-2">
+                            <span class="text-blue-500">🏪</span> 適用通路 (認明 TWQR/BC Card/Paybooc)
+                        </h3>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="bg-purple-100 text-purple-700 px-2 py-1 rounded">CU</span>
+                            <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded">GS25</span>
+                            <span class="bg-green-100 text-green-700 px-2 py-1 rounded">7-11</span>
+                            <span class="bg-red-100 text-red-700 px-2 py-1 rounded">大創 Daiso</span>
+                            <span class="bg-yellow-100 text-yellow-700 px-2 py-1 rounded">Ediya Coffee</span>
+                            <span class="bg-stone-100 text-stone-700 px-2 py-1 rounded">巴黎貝甜</span>
+                            <span class="bg-pink-100 text-pink-700 px-2 py-1 rounded">31冰淇淋</span>
+                            <span class="bg-stone-100 text-stone-700 px-2 py-1 rounded">樂天免稅店</span>
+                        </div>
+                        <p class="mt-3 text-xs text-stone-400">⚠️ 自助結帳機請選「BC Card」或「Paybooc」</p>
+                    </div>
+                </div>
+
+                <!-- How to Use -->
+                <div class="mt-6 bg-stone-900 text-stone-300 rounded-xl p-5 text-sm">
+                    <h3 class="font-bold text-white mb-3 flex items-center gap-2">
+                        <span>📱</span> 設定與使用教學
+                    </h3>
+                    <ol class="list-decimal list-inside space-y-2">
+                        <li>下載<strong>「台灣行動支付」App」</strong> 或支援的網銀 App (如: 土銀、一銀、兆豐等)。</li>
+                        <li>綁定<strong>銀行帳戶/金融卡</strong> (⚠️ 不支援信用卡)。</li>
+                        <li>確認已開啟「跨國交易」功能。</li>
+                        <li>結帳時打開 App ➜ 點選「跨國交易」➜ 出示 QR Code 給店員掃描。</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WOWPASS & T-money Section -->
+    <section class="bg-white border-y border-stone-100 py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100">
+                <h2 class="text-2xl font-bold text-stone-900 mb-6 flex items-center">
+                    <span class="bg-orange-100 text-orange-600 p-2 rounded-lg mr-3 text-xl">💳</span>
+                    支付工具攻略：WOWPASS vs T-money
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <!-- WOWPASS -->
+                    <div class="border border-orange-200 bg-orange-50/50 rounded-xl p-5">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-lg font-bold text-orange-600">WOWPASS 卡</h3>
+                            <span class="text-xs font-bold bg-orange-100 text-orange-600 px-2 py-1 rounded">三合一神卡</span>
+                        </div>
+                        <p class="text-sm text-stone-600 mb-4">結合「換匯＋簽帳付款＋T-money交通卡」。適合不想帶大量現金的旅客。</p>
+                        <ul class="space-y-2 text-sm text-stone-600">
+                            <li class="flex gap-2"><span class="text-orange-500">✅</span> <strong>換匯方便：</strong>地鐵站機台直接用台幣儲值。</li>
+                            <li class="flex gap-2"><span class="text-orange-500">✅</span> <strong>NFC 儲值：</strong>用手機 App 就能幫交通卡儲值 (大推！)。</li>
+                            <li class="flex gap-2"><span class="text-orange-500">✅</span> <strong>消費回饋：</strong>星巴克、Olive Young 等品牌有現金回饋。</li>
+                        </ul>
+                        <div class="mt-4 pt-4 border-t border-orange-200">
+                            <h4 class="font-bold text-stone-800 text-sm mb-2">📲 機場領取攻略</h4>
+                            <p class="text-xs text-stone-500">
+                                1. <strong>App 預約 (推薦)</strong>：仁川機場 SKT 櫃檯或 CU 超商領取。<br>
+                                2. <strong>現場購買</strong>：AREX 入口處「WOW Exchange」機台。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- T-money -->
+                    <div class="border border-stone-200 bg-stone-50/50 rounded-xl p-5">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-lg font-bold text-stone-700">T-money 卡</h3>
+                            <span class="text-xs font-bold bg-stone-200 text-stone-600 px-2 py-1 rounded">單純交通卡</span>
+                        </div>
+                        <p class="text-sm text-stone-600 mb-4">韓國最普及的交通卡。適合已有韓幣現金或只搭車的旅客。</p>
+                        <ul class="space-y-2 text-sm text-stone-600">
+                            <li class="flex gap-2"><span class="text-stone-500">✅</span> <strong>購買容易：</strong>機場超商隨買隨用。</li>
+                            <li class="flex gap-2"><span class="text-stone-500">✅</span> <strong>款式多：</strong>有許多偶像/卡通聯名卡面。</li>
+                            <li class="flex gap-2"><span class="text-red-500">⚠️</span> <strong>iPhone 限制：</strong>無法直接用信用卡線上儲值，需去機台付現。</li>
+                        </ul>
+                        <div class="mt-4 pt-4 border-t border-stone-200">
+                            <h4 class="font-bold text-stone-800 text-sm mb-2">💡 專家建議</h4>
+                            <p class="text-xs text-stone-500">
+                                如果您是 iPhone 用戶且不想一直找機台儲值，<strong>強烈建議辦 WOWPASS</strong> 使用 App 的 NFC 儲值功能！
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comparison Table -->
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-left text-stone-600">
+                        <thead class="text-xs text-stone-700 uppercase bg-stone-100">
+                            <tr>
+                                <th class="px-4 py-3 rounded-l-lg">比較項目</th>
+                                <th class="px-4 py-3 text-orange-600">WOWPASS</th>
+                                <th class="px-4 py-3 rounded-r-lg">T-money</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-stone-50">
+                                <td class="px-4 py-3 font-medium">主要功能</td>
+                                <td class="px-4 py-3">換匯 + 簽帳 + 交通</td>
+                                <td class="px-4 py-3">純交通卡</td>
+                            </tr>
+                            <tr class="border-b border-stone-50">
+                                <td class="px-4 py-3 font-medium">儲值方式</td>
+                                <td class="px-4 py-3">台幣現金 (機台) / 信用卡 (App)</td>
+                                <td class="px-4 py-3">韓幣現金 (超商/地鐵站)</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-medium">交通卡儲值</td>
+                                <td class="px-4 py-3 font-bold text-orange-600">可用 App NFC 儲值 (免現金)</td>
+                                <td class="px-4 py-3">需去機台/超商用現金</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </section>
@@ -471,6 +556,13 @@
     <footer class="bg-stone-50 border-t border-stone-200 py-8 text-center text-sm text-stone-400">
         <p>© 2026 Seoul Efficient Travel Planner. </p>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" onclick="scrollToTop()" class="fixed bottom-8 right-8 bg-rose-500 hover:bg-rose-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 opacity-0 translate-y-10 z-50" aria-label="Back to Top">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
 
     <script src="script.js"></script>
 </body>
