@@ -39,279 +39,267 @@ const itineraryData = [
   {
     day: 1,
     date: "2/04 (三)",
-    title: "入境首爾 & 明洞換匯",
-    focus: "Logistics & Cash",
+    title: "Day 1: 登陸部署 & 明洞偵查",
+    focus: "入境、換匯、炸雞",
     details: [
       {
-        time: "11:10",
+        time: "11:15",
         icon: "🛬",
-        title: "抵達仁川機場 (ICN) T2",
-        desc: "CI 0160 抵達。通關約需 1-1.5 小時。領完行李後，尋找 **機場巴士 6015** 售票處或刷 T-money 卡。",
+        title: "抵達仁川機場 (T2)",
+        desc: "CI 0160 降落。入境審查約需 1 小時。<br><strong>補給任務：</strong>在機場便利商店買瓶香蕉牛奶補充血糖；尋找 WOWPASS 機台領卡並儲值 (建議先存 50,000 KRW)。"
       },
       {
-        time: "13:00",
+        time: "12:45",
         icon: "🚌",
-        title: "前往飯店",
-        desc: "搭乘機場巴士 6015 (約 80 分鐘) 直達「忠武路站」。若 3 人以上建議直接叫 **Uber** (約 7-8 萬韓元，省力)。",
+        title: "移動：機場巴士 6015",
+        desc: "至 T2 B1 層 28 號月台搭乘。<br><strong>費用：</strong>17,000 KRW (可刷 T-money)。<br><strong>目的地：</strong>忠武路站 (Chungmuro Station)。"
       },
       {
-        time: "15:00",
+        time: "14:15",
         icon: "🏨",
         title: "Wecostay Namsan Check-in",
-        desc: "寄放行李或辦理入住。稍作休息，整理輕便包包準備出門。",
+        desc: "下車後步行至飯店。若未到入住時間先寄放行李。<br><strong>注意：</strong>忠武路站 6 號出口有電梯。"
       },
       {
-        time: "16:00",
-        icon: "💰",
-        title: "明洞換錢 (重要)",
-        desc: "搭地鐵 1 站或步行至明洞。前往 **大使館換錢所** 或 **一品香** (匯率最好)。換完錢手上有現金才安心。",
+        time: "15:30",
+        icon: "🚶",
+        title: "散策：南山韓屋村",
+        desc: "飯店步行 5-8 分鐘。免費景點，適合剛下飛機放鬆，可仰望首爾塔。"
       },
       {
         time: "17:30",
-        icon: "🦀",
-        title: "晚餐：Odarijip (醬蟹)",
-        desc: "許願清單 A8：**오다리집 간장게장 명동2호점**。享受第一頓韓式醬蟹 (建議先用 Google Map 確認當日排隊狀況)。",
+        icon: "💰",
+        title: "明洞換匯 & 美妝",
+        desc: "搭地鐵 1 站至明洞。<br>1. <strong>換匯：</strong>大使館前換錢所 (明洞 5 號出口)。<br>2. <strong>採購：</strong>Olive Young 旗艦店 (Torriden 面膜、Unove 護髮油)。"
       },
       {
-        time: "19:00",
-        icon: "🛍️",
-        title: "明洞商圈掃街",
-        desc: "Olive Young 明洞旗艦店 (先看貨不一定要全買)、ABC Mart、路邊攤小吃 (雞蛋糕、糖餅)。",
+        time: "19:30",
+        icon: "🥟",
+        title: "晚餐：明洞餃子 (Myeongdong Kyoja)",
+        desc: "米其林必比登推薦。必點：刀切麵、蒸餃。"
       },
       {
-        time: "21:00",
-        icon: "🥩",
-        title: "宵夜備案：Taecho Galbi",
-        desc: "許願清單 A12：若晚餐沒吃飽，可去 **태초갈비 명동점** 吃烤排骨。",
-      },
-    ],
+        time: "21:30",
+        icon: "🍗",
+        title: "宵夜：BHC 炸雞 (忠武路店)",
+        desc: "位置：靠近忠武路站 2 號出口。<br><strong>必點：</strong>Bburinkle (芝士粉炸雞) + 芝士球 (Cheese Balls)。<br>可外帶回飯店吃。"
+      }
+    ]
   },
   {
     day: 2,
     date: "2/05 (四)",
-    title: "倫敦貝果 & 韓服體驗",
-    focus: "Culture & Hotspots",
+    title: "Day 2: 安國早起戰 & 東大門批發",
+    focus: "貝果排隊、韓服、批發市場",
     details: [
       {
-        time: "07:30",
+        time: "07:15",
+        icon: "⏰",
+        title: "起床與出發",
+        desc: "搭地鐵 3 號線：忠武路 ➜ 安國站 (Anguk)，由 2 號出口出站。"
+      },
+      {
+        time: "07:40",
         icon: "🥯",
-        title: "London Bagel Museum (安國)",
-        desc: "許願清單 A10：**早起排隊戰**。搭地鐵 3 號線至安國站。先去抽號碼牌 (CatchTable)。如果等待時間長，先去下一站。",
+        title: "戰術排隊：London Bagel Museum",
+        desc: "<strong>目標：</strong>08:00 開門，務必於 07:40 前抵達現場登記 Catchtable。<br><strong>必點：</strong>蔥韭菜貝果 (Spring Onion)、馬鈴薯起司貝果。<br><em>備案：若排太久，轉戰隔壁 Artist Bakery (鹽麵包)。</em>"
       },
       {
-        time: "09:00",
+        time: "09:30",
         icon: "👘",
-        title: "韓服租借：Yes Hanbok",
-        desc: "許願清單 B1：前往 **Yes Hanbok** (近景福宮站)。換上美美的韓服，把頭髮編好。",
-      },
-      {
-        time: "10:30",
-        icon: "📸",
-        title: "景福宮 (Gyeongbokgung)",
-        desc: "穿韓服免費入場。避開了週二公休。必拍：光化門、慶會樓。在古宮中留下人生美照。",
+        title: "韓服體驗：宮女狐 (Palace Fox)",
+        desc: "位置：景福宮站 2 號出口旁。建議加購毛披肩保暖。<br>隨後進入<strong>景福宮</strong> (穿韓服免門票)，避開正殿人潮，往香遠亭拍攝。"
       },
       {
         time: "12:30",
         icon: "🐔",
         title: "午餐：土俗村蔘雞湯",
-        desc: "許願清單 A3：歸還韓服後，步行至 **土俗村**。觀光客必吃，但翻桌率快。人蔘酒暖身。",
+        desc: "景福宮站 2 號出口附近。雖然要排隊但翻桌快。冬季補身必吃。"
       },
       {
-        time: "14:30",
-        icon: "🍜",
-        title: "下午茶/點心：Silla Jemyun",
-        desc: "許願清單 A7：**신라제면 안국점** (辣刀削麵)。如果午餐吃太飽，這餐可改為純逛街或喝咖啡 (Onion/Dotori Garden)。",
+        time: "14:00",
+        icon: "☕",
+        title: "北村 & 三清洞散策",
+        desc: "穿越景福宮東側圍牆。造訪北村八景 (第5、6景)。下午茶推薦：Osulloc Tea House 或 Green Mile Coffee。"
       },
       {
-        time: "16:00",
-        icon: "🏘️",
-        title: "北村 & 三清洞",
-        desc: "沿著石牆路散步，逛逛三清洞的精緻選物店與畫廊。",
+        time: "17:00",
+        icon: "🐙",
+        title: "晚餐：新羅製麵 (Silla Jemyeon)",
+        desc: "地點：益善洞 (鍾路三街站)。<br><strong>必點：</strong>章魚拌麵 (Nakji Bibim Kalguksu)。視覺衝擊強，微辣開胃。"
       },
       {
-        time: "18:00",
-        icon: "🏮",
-        title: "益善洞 (Ikseondong)",
-        desc: "搭地鐵至鐘路3街。逛益善洞韓屋村的小店。這裡有很多飾品店與復古洋裝店。",
-      },
-    ],
+        time: "18:30",
+        icon: "🌃",
+        title: "東大門 DDP & 批發市場",
+        desc: "從益善洞搭計程車至東大門 (約 10 分鐘)。<br>1. <strong>DDP：</strong>欣賞太空船建築夜景。<br>2. <strong>nyu nyu：</strong>必逛飾品批發 (款式上萬種)。<br>3. <strong>THE MASK SHOP：</strong>美妝批發補貨。"
+      }
+    ]
   },
   {
     day: 3,
     date: "2/06 (五)",
-    title: "聖水洞：潮牌與文青麵包",
-    focus: "Trend Shopping",
+    title: "Day 3: 聖水洞工業風 & 馬場洞韓牛",
+    focus: "潮牌巡禮、頂級牛肉",
     details: [
       {
-        time: "10:00",
-        icon: "🍞",
-        title: "早午餐：Standard Bread",
-        desc: "許願清單 A1：前往聖水洞，第一站 **스탠다드브레드 성수**。享受超人氣吐司與咖啡。",
+        time: "09:30",
+        icon: "☕",
+        title: "早晨：Cafe Onion 聖水店",
+        desc: "聖水站 2 號出口。廢墟工業風名店。必點：Pandoro (雪山麵包)。"
       },
       {
-        time: "11:30",
+        time: "10:30",
         icon: "✨",
-        title: "聖水洞地標巡禮",
-        desc: "Dior Seongsu (外觀打卡)、Tamburins (香氛)、Kinfolk。這一區非常好拍。",
+        title: "品牌巡禮 Part 1",
+        desc: "<strong>Dior Seongsu：</strong>概念店外觀拍照。<br><strong>Tamburins：</strong>獨特混凝土建築，買香氛/護手霜。<br><strong>Stand Oil：</strong>平價設計包款。"
       },
       {
         time: "13:00",
         icon: "🍲",
-        title: "午餐：Muguok (武橋)",
-        desc: "許願清單 A11：**무구옥** (湯飯)。如果想吃西式，聖水洞也有很多義大利麵選擇。",
+        title: "午餐：傳說中的馬鈴薯排骨湯",
+        desc: "店名：Sommunnan Gamjatang (祖傳馬鈴薯排骨湯)。<br>聖水站 4 號出口旁。白鐘元推薦，肉嫩湯濃。"
       },
       {
-        time: "14:30",
-        icon: "🛍️",
-        title: "深度購物：Matin Kim & More",
-        desc: "逛 House of Byne (Matin Kim), Marithe, ADER Error, LCDC 複合文化空間。錢包請準備好！",
+        time: "14:00",
+        icon: "🧢",
+        title: "品牌巡禮 Part 2",
+        desc: "<strong>EMIS：</strong>買棒球帽。<br><strong>Mardi Mercredi：</strong>(29CM Seongsu 選品店)。<br><strong>Standard Bread：</strong>爆紅生吐司專賣店。"
       },
       {
-        time: "17:30",
-        icon: "☕",
-        title: "下午茶/休息",
-        desc: "聖水洞咖啡廳極多，隨意挑選一家順眼的 (如: Grandpa Factory, Onion Seongsu)。",
+        time: "17:00",
+        icon: "🥩",
+        title: "晚餐：馬場洞韓牛 (Majang-dong)",
+        desc: "從聖水搭計程車至馬場畜產物市場 (約 10-15 分)。<br><strong>推薦餐廳：</strong>馬場谷 (Majanggol)。<br><strong>模式：</strong>一樓挑肉 (1++等級)，二樓代烤。<br><strong>必吃：</strong>雪花里肌 (Salchisal)。"
       },
       {
-        time: "19:00",
-        icon: "🚇",
-        title: "返回飯店/忠武路",
-        desc: "提著戰利品回飯店放。",
-      },
-      {
-        time: "20:30",
-        icon: "🍗",
-        title: "宵夜：BHC 炸雞",
-        desc: "許願清單 C5：**BHC치킨 충무로역점**。離住宿點超近，走路去吃 Buringcle (起司粉炸雞) 配啤酒。",
-      },
-    ],
+        time: "20:00",
+        icon: "🛏️",
+        title: "返程休息",
+        desc: "本日步行量大，建議早點回飯店休息整理戰利品。"
+      }
+    ]
   },
   {
     day: 4,
     date: "2/07 (六)",
-    title: "弘大延南洞：醬蟹與派",
-    focus: "Foodie & Youth",
+    title: "Day 4: 漢南洞名媛路線",
+    focus: "高端潮牌、釜飯、梨泰院",
     details: [
       {
-        time: "11:00",
-        icon: "🦀",
-        title: "早午餐：真味食堂 (Jinmi)",
-        desc: "許願清單 A2：**진미식당** (麻浦區)。*務必提前請飯店或信用秘書預約*。米其林推薦醬蟹。若訂不到改去弘大吃其他醬蟹。",
+        time: "10:00",
+        icon: "🍳",
+        title: "移動與早午餐",
+        desc: "地鐵：漢江鎮站 (Hangangjin) 3 號出口。<br>餐廳：Summer Lane (澳式) 或 LTP Hannam。"
       },
       {
-        time: "13:00",
-        icon: "🥧",
-        title: "甜點：Parole & Langue",
-        desc: "許願清單 A6：**파롤앤랑그** (延南洞)。非常有名的玉米派/栗子派。延南洞還有很多文創小店可逛。",
-      },
-      {
-        time: "15:00",
+        time: "12:00",
         icon: "🛍️",
-        title: "弘大商圈 (Hongdae)",
-        desc: "從延南洞走回弘大入口站。逛 AK Plaza, Gentle Monster, Shoopen, Object, Butter。",
+        title: "漢南洞品牌街 (由高往低走)",
+        desc: "戰術動線：從 3 號出口沿大馬路走到現代卡音樂圖書館旁階梯往下。<br>1. <strong>Mardi Mercredi：</strong>小雛菊衛衣大本營。<br>2. <strong>Rockfish：</strong>英倫雨靴/芭蕾鞋。<br>3. <strong>Marithé (Villa de Marithé)：</strong>旗艦店極美。<br>4. <strong>EMIS：</strong>漢南旗艦店。"
       },
       {
-        time: "17:00",
-        icon: "☕",
-        title: "咖啡：Gobongdang",
-        desc: "許願清單 A9：**고봉당 혜화** (如果是在大學路分店，需搭地鐵前往；若只想在弘大，可改去延南洞其他咖啡廳)。建議留在弘大繼續逛。",
+        time: "16:00",
+        icon: "🍚",
+        title: "晚餐：Solsot 漢南店 (釜飯)",
+        desc: "<strong>注意：</strong>17:00 晚餐時段開始，強烈建議 16:30 先去排隊或登記 Catchtable。<br><strong>必點：</strong>牛排釜飯 (Steak Pot Rice)、鯛魚干貝釜飯。<br>飯後記得喝鍋巴湯 (Nurungji)。"
       },
       {
-        time: "19:00",
-        icon: "🥩",
-        title: "晚餐：The Giwa Hapjeong",
-        desc: "許願清單 A4：**더기와 합정점**。在合井站附近的精緻烤肉店，環境比弘大一般烤肉店好，適合好好吃肉。",
+        time: "17:30",
+        icon: "🍸",
+        title: "梨泰院夜遊",
+        desc: "步行至梨泰院主街，感受異國酒吧氛圍。"
       },
       {
-        time: "21:00",
-        icon: "🎤",
-        title: "弘大 Busking",
-        desc: "週六晚上的弘大步行街最熱鬧，看完街頭表演後回飯店。",
-      },
-    ],
+        time: "20:30",
+        icon: "🍗",
+        title: "宵夜：60 雞 (新堂/藥水)",
+        desc: "回程順路 (或外送)。<br><strong>必點：</strong>老虎炸雞 (Horangi - 蒜片甜辣) 或 Gochu (辣椒) 炸雞。"
+      }
+    ]
   },
   {
     day: 5,
     date: "2/08 (日)",
-    title: "汝矣島百貨 & 東大門",
-    focus: "Last Shopping",
+    title: "Day 5: 弘大青春 & 現代百貨",
+    focus: "文創、甜點派、最後補貨",
     details: [
       {
-        time: "10:30",
-        icon: "🏢",
-        title: "The Hyundai Seoul",
-        desc: "搭地鐵至汝矣島站。首爾最大百貨。**B2 Creative Ground** 是年輕潮牌大本營 (Thisisneverthat, Nice Weather)。",
+        time: "10:00",
+        icon: "🌳",
+        title: "延南洞林道 & 移動",
+        desc: "地鐵 2 號線至弘大入口站 3 號出口。沿著京義線林道散步。"
+      },
+      {
+        time: "11:30",
+        icon: "🥧",
+        title: "甜點聖杯：Parole & Langue",
+        desc: "<strong>注意：</strong>13:00 開門，但建議 <strong>12:20</strong> 前抵達使用機器登記候位。<br><strong>必吃：</strong>玉米派 (Corn Pie)、栗子派 (Chestnut Pie)。"
       },
       {
         time: "13:00",
-        icon: "🍔",
-        title: "午餐：百貨內美食",
-        desc: "推薦 Five Guys (B1) 或其他美食街排隊名店。記得先用機器候位。",
+        icon: "🧸",
+        title: "文創巡禮：Object",
+        desc: "前往 Object 西橋店 (或弘大總店)。Dinotaeng 短尾袋鼠周邊聖地。"
+      },
+      {
+        time: "14:30",
+        icon: "🛍️",
+        title: "弘大商圈最後衝刺",
+        desc: "Marithé 弘大旗艦店、With Muu (K-pop 周邊)。"
       },
       {
         time: "16:00",
-        icon: "🍜",
-        title: "晚餐：Hani Kalguksu",
-        desc: "許願清單 A5：**하니칼국수** (新堂站)。非常有名的魚卵刀削麵，外觀很復古。",
+        icon: "🏢",
+        title: "汝矣島現代百貨 (The Hyundai)",
+        desc: "地鐵搭至汝矣島站。目標：<strong>B2 Creative Ground</strong> (年輕潮牌層) 與 5F 室內花園。"
       },
       {
-        time: "18:00",
-        icon: "💎",
-        title: "東大門飾品批發",
-        desc: "前往 **NYU NYU** 或 **Mimi Line** (新堂站走過去不遠)。整棟的飾品牆，價格便宜，適合買回來送人。",
+        time: "18:30",
+        icon: "🦀",
+        title: "晚餐：Odarijip (明洞醬蟹)",
+        desc: "返回明洞吃醬蟹 (五達里家)。口味鮮甜，適合初次嘗試者。"
       },
       {
-        time: "20:00",
-        icon: "🛒",
-        title: "最後補貨",
-        desc: "如果還有力氣，可去附近的 DDP 設計廣場拍照。",
-      },
-      {
-        time: "22:00",
-        icon: "🍯",
-        title: "最後宵夜：Kyochon 炸雞",
-        desc: "許願清單 C1/C2：回到飯店，請櫃檯幫忙或用 Uber Eats 叫 **Kyochon (橋村)** 蜂蜜炸雞外送。完美 Ending。",
-      },
-    ],
+        time: "21:00",
+        icon: "🍗",
+        title: "終極宵夜：橋村炸雞",
+        desc: "回飯店叫外送。<strong>必點：</strong>Honey Combo (蜂蜜炸雞)。<br>邊吃邊整理行李，確認重量分配。"
+      }
+    ]
   },
   {
     day: 6,
     date: "2/09 (一)",
-    title: "打包返程 (金浦機場)",
-    focus: "Departure",
+    title: "Day 6: 極限撤離 (金浦機場)",
+    focus: "樂天超市掃貨、登機",
     details: [
       {
         time: "09:00",
-        icon: "📦",
-        title: "Check-out",
-        desc: "辦理退房。確認護照、錢包、隨身電源。",
-      },
-      {
-        time: "09:30",
         icon: "🚕",
         title: "前往金浦機場 (GMP)",
-        desc: "請注意：**回程是金浦，不是仁川！** 建議搭 **Uber/計程車** (約 40 分鐘) 或地鐵 5 號線 (乙支路4街->金浦機場)。",
+        desc: "搭乘計程車 (約 40-50 分)。目的地是金浦機場國際線航廈。"
+      },
+      {
+        time: "09:40",
+        icon: "🧳",
+        title: "報到 & 托運",
+        desc: "CI 0261 (13:45 起飛)。<strong>先完成報到與托運</strong>，一身輕便再去逛街。<br>若櫃檯未開，可利用 T-Luggage 寄放行李。"
       },
       {
         time: "10:30",
-        icon: "🛂",
-        title: "機場報到 & 退稅",
-        desc: "華航 CI 0261 (13:45 起飛)。金浦機場人較少，但仍建議提早處理退稅單據 (Kiosk 掃描)。",
+        icon: "🛒",
+        title: "極限購物：樂天超市 (Gimpo)",
+        desc: "位於金浦機場連通的 Lotte Mall B1。10:30 開門。<br><strong>任務：</strong>掃蕩海苔、HBAF 杏仁果、布朗尼。務必預留 15 分鐘結帳退稅。"
       },
       {
         time: "12:00",
-        icon: "🍽️",
-        title: "機場午餐",
-        desc: "金浦機場樂天購物中心 (Lotte Mall) 就連著機場，如果有時間可以在那邊吃最後午餐。",
-      },
-      {
-        time: "13:45",
-        icon: "✈️",
-        title: "飛機起飛",
-        desc: "帶著滿滿的戰利品與回憶，飛往台北松山 (TSA)。",
-      },
-    ],
-  },
+        icon: "🛂",
+        title: "安檢與登機",
+        desc: "返回航廈安檢。13:15 登機，返回台北松山。"
+      }
+    ]
+  }
 ];
 
 // Chart.js Configuration
