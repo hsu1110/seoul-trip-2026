@@ -119,50 +119,56 @@ const itineraryData = [
   {
     day: 2,
     date: "2/05 (四)",
-    title: "Day 2: 安國早起戰 & 東大門批發",
-    focus: "貝果排隊、韓服、批發市場",
+    title: "Day 2: 安國早鳥突擊 & 廣藏市場巡禮",
+    focus: "倫敦貝果、韓服攝影、北韓式蔘雞湯、廣藏市場",
     details: [
       {
-        time: "07:15",
-        icon: "⏰",
-        title: "起床與出發",
-        desc: "搭地鐵 3 號線：忠武路 ➜ 安國站 (Anguk)，由 2 號出口出站。"
+        time: "07:10",
+        icon: "🚕",
+        title: "出發：前往安國站",
+        desc: "從 Wecostay Namsan 搭乘<strong>計程車</strong>直達安國（約 15 分鐘，車資約 7,000 韓元），爭取排隊時間 [1][2]。"
       },
       {
-        time: "07:40",
+        time: "07:30",
         icon: "🥯",
-        title: "戰術排隊：London Bagel Museum",
-        desc: "<strong>目標：</strong>08:00 開門，務必於 07:40 前抵達現場登記 Catchtable。<br><strong>必點：</strong>蔥韭菜貝果 (Spring Onion)、馬鈴薯起司貝果。<br><em>備案：若排太久，轉戰隔壁 Artist Bakery (鹽麵包)。</em>"
+        title: "早鳥突擊：London Bagel Museum",
+        desc: "<strong>策略：</strong>務必於 07:30 抵達開始實體排隊 (Open Run)，確保 08:00 第一輪入場 [3][1]。<br><strong>必點：</strong>招牌磚塊巷三明治 (Brick Lane)、馬鈴薯起司貝果、松露蘑菇湯 [3]。"
       },
       {
-        time: "09:30",
+        time: "09:45",
         icon: "👘",
         title: "韓服體驗：宮女狐 (Palace Fox)",
-        desc: "位置：景福宮站 2 號出口旁。建議加購毛披肩保暖。<br>隨後進入<strong>景福宮</strong> (穿韓服免門票)，避開正殿人潮，往香遠亭拍攝。"
+        desc: "位置：景福宮站 2 號出口旁。週四正常營業 [4][5]。<br><strong>重點：</strong>務必加租毛邊背心 (Baeja) 與暖暖包以禦寒 [4]。"
       },
       {
-        time: "12:30",
+        time: "10:30",
+        icon: "📷",
+        title: "景福宮攝影散策",
+        desc: "穿韓服免門票 [6]。<br><strong>動線：</strong>光化門 → 勤政殿 (宏偉) → 慶會樓 (倒影) → 香遠亭 (私密後花園) [6][5]。"
+      },
+      {
+        time: "13:15",
         icon: "🐔",
-        title: "午餐：土俗村蔘雞湯",
-        desc: "景福宮站 2 號出口附近。雖然要排隊但翻桌快。冬季補身必吃。"
+        title: "午餐：無垢屋 (Muguok)",
+        desc: "搭計程車前往以保留體力 [7]。<br><strong>特色：</strong>北韓式清燉蔘雞湯。<br><strong>必點：</strong>無垢蔘雞湯 + 涼拌魷魚 (Seasoned Squid) [7][1]。"
       },
       {
-        time: "14:00",
+        time: "14:30",
         icon: "☕",
-        title: "北村 & 三清洞散策",
-        desc: "穿越景福宮東側圍牆。造訪北村八景 (第5、6景)。下午茶推薦：Osulloc Tea House 或 Green Mile Coffee。"
+        title: "北村與三清洞文創漫遊",
+        desc: "由嘉會洞高處往三清洞走（下坡省力）。<br><strong>推薦：</strong>Granhand (香氛)、雪花秀旗艦店、Blue Bottle 三清洞 [8][1]。"
       },
       {
-        time: "17:00",
-        icon: "🐙",
-        title: "晚餐：新羅製麵 (Silla Jemyeon)",
-        desc: "地點：益善洞 (鍾路三街站)。<br><strong>必點：</strong>章魚拌麵 (Nakji Bibim Kalguksu)。視覺衝擊強，微辣開胃。"
+        time: "18:00",
+        icon: "🥢",
+        title: "晚餐：廣藏市場美食攻略",
+        desc: "建議搭計程車前往 [9]。<br><strong>米其林推薦：</strong>富村生牛肉 (生牛肉章魚拼盤)。<br><strong>必吃：</strong>順熙家綠豆煎餅、母女飯捲 (麻藥飯捲) [10][1]。"
       },
       {
-        time: "18:30",
+        time: "19:30",
         icon: "🌃",
-        title: "東大門 DDP & 批發市場",
-        desc: "從益善洞搭計程車至東大門 (約 10 分鐘)。<br>1. <strong>DDP：</strong>欣賞太空船建築夜景。<br>2. <strong>nyu nyu：</strong>必逛飾品批發 (款式上萬種)。<br>3. <strong>THE MASK SHOP：</strong>美妝批發補貨。"
+        title: "城市夜遊：清溪川 & DDP",
+        desc: "沿清溪川步行至東大門。拍攝 DDP 太空船建築夜景 [11][1]。<br><strong>回程：</strong>從東大門歷史文化公園站搭地鐵 4 號線至忠武路 (1 站即達) [11]。"
       }
     ]
   },
