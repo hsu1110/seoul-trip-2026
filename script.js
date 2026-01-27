@@ -40,43 +40,73 @@ const itineraryData = [
     day: 1,
     date: "2/04 (三)",
     title: "Day 1: 登陸部署 & 明洞偵查",
-    focus: "入境、換匯、炸雞",
+    focus: "入境、換匯、龍鬚糖小哥、米其林晚餐",
     details: [
       {
         time: "11:15",
         icon: "🛬",
         title: "抵達仁川機場 (T2)",
-        desc: "CI 0160 降落。入境審查約需 1 小時。<br><strong>補給任務：</strong>在機場便利商店買瓶香蕉牛奶補充血糖；尋找 WOWPASS 機台領卡並儲值 (建議先存 50,000 KRW)。"
+        desc: "CI 0160 降落。T2 入境大廳挑高且自動化程度高，預計 12:30 前完成通關。<br><strong>任務：</strong>前往 B1 交通中心尋找 28 號月台購票 [2, 3]。"
       },
       {
-        time: "12:45",
+        time: "12:30",
         icon: "🚌",
         title: "移動：機場巴士 6015",
-        desc: "至 T2 B1 層 28 號月台搭乘。<br><strong>費用：</strong>17,000 KRW (可刷 T-money)。<br><strong>目的地：</strong>忠武路站 (Chungmuro Station)。"
+        desc: "由 T2 直達忠武路，避開地鐵換乘樓梯。<br><strong>費用：</strong>17,000 KRW (建議櫃檯或機台購票)。<br><strong>亮點：</strong>途經仁川大橋與漢江風景 [3, 8]。"
       },
       {
-        time: "14:15",
+        time: "14:00",
         icon: "🏨",
-        title: "Wecostay Namsan Check-in",
-        desc: "下車後步行至飯店。若未到入住時間先寄放行李。<br><strong>注意：</strong>忠武路站 6 號出口有電梯。"
+        title: "Wecostay Namsan (寄放行李)",
+        desc: "位於忠武路站附近。利用飯店 Luggage Storage 服務先寄放行李，輕裝前往明洞 [1, 4]。"
+      },
+      {
+        time: "14:40",
+        icon: "💰",
+        title: "明洞換匯戰略",
+        desc: "步行至中國大使館前換錢所 (明洞 5 號出口方向)。<br><strong>策略：</strong>比較 2-3 家匯率 (差距極小)，選擇人少者即可，需備妥護照 [9, 10]。"
+      },
+      {
+        time: "15:00",
+        icon: "🍢",
+        title: "下午茶：明洞街頭小吃",
+        desc: "撫慰旅途疲憊的熱量補給。<br><strong>必吃：</strong>堅果糖餅 (Hotteok)、雞蛋糕 (Gyeran-ppang)、可頌鯛魚燒 [5, 6]。"
       },
       {
         time: "15:30",
-        icon: "🚶",
-        title: "散策：南山韓屋村",
-        desc: "飯店步行 5-8 分鐘。免費景點，適合剛下飛機放鬆，可仰望首爾塔。"
+        icon: "💄",
+        title: "購物 1：Olive Young 旗艦店",
+        desc: "明洞城 (Myeongdong Town) 全球旗艦店。<br><strong>鎖定：</strong>Torriden 精華、Round Lab 獨島系列。<br><strong>提示：</strong>滿 30,000 KRW 可享即時退稅 (Immediate Tax Refund) [6]。"
+      },
+      {
+        time: "16:30",
+        icon: "🥜",
+        title: "購物 2：HBAF 杏仁果店",
+        desc: "體驗宛如主題樂園的堅果店。<br><strong>推薦：</strong>蜂蜜奶油、烤玉米口味。店內可自由試吃並與公仔拍照 [11]。"
+      },
+      {
+        time: "17:00",
+        icon: "🍯",
+        title: "朝聖：龍鬚糖小哥 (Kkultarae)",
+        desc: "<strong>地點：</strong>Noon Square 購物中心前方 (靠近 Zara)。<br><strong>互動：</strong>Youtube 熱點，小哥戴著獨特帽子，會唱著魔性的「Incheon Inje~ (仁川麟蹄)」口號與遊客互動。<br><strong>任務：</strong>買一盒龍鬚糖並錄影留念。"
       },
       {
         time: "17:30",
-        icon: "💰",
-        title: "明洞換匯 & 美妝",
-        desc: "搭地鐵 1 站至明洞。<br>1. <strong>換匯：</strong>大使館前換錢所 (明洞 5 號出口)。<br>2. <strong>採購：</strong>Olive Young 旗艦店 (Torriden 面膜、Unove 護髮油)。"
+        icon: "🍜",
+        title: "晚餐：明洞餃子 (Myeongdong Kyoja)",
+        desc: "米其林必比登推薦，在地人也排隊的老字號。<br><strong>必點：</strong>濃厚雞湯刀削麵 (Kalguksu)、蒸餃。<br><strong>特色：</strong>極其辛辣的大蒜泡菜 (Garlic Kimchi) [7, 12]。"
+      },
+      {
+        time: "18:30",
+        icon: "🛍️",
+        title: "購物 3：Daiso 明洞站店",
+        desc: "12 層樓高的垂直購物塔。<br><strong>攻略：</strong>搭電梯直達 12 樓，走樓梯逛下來。必看 4F 迪士尼聯名區與 2F 美妝蛋/微針精華 [13]。"
       },
       {
         time: "19:30",
-        icon: "🥟",
-        title: "晚餐：明洞餃子 (Myeongdong Kyoja)",
-        desc: "米其林必比登推薦。必點：刀切麵、蒸餃。"
+        icon: "🚶",
+        title: "歸途：步行回飯店",
+        desc: "沿退溪路 (Toegye-ro) 直行約 10 分鐘即可返回 Wecostay，無需再搭地鐵 [1, 12]。"
       },
       {
         time: "21:30",
