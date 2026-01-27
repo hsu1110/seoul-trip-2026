@@ -221,51 +221,81 @@ const itineraryData = [
   {
     day: 5,
     date: "2/08 (日)",
-    title: "Day 5: 弘大青春 & 現代百貨",
-    focus: "文創、甜點派、最後補貨",
+    title: "Day 5: 望遠市場巡禮 & 弘大商圈 & 汝矣島現代百貨",
+    focus: "排隊名店、文創散策、漢江夜景、醬蟹",
     details: [
       {
-        time: "10:00",
-        icon: "🌳",
-        title: "延南洞林道 & 移動",
-        desc: "地鐵 2 號線至弘大入口站 3 號出口。沿著京義線林道散步。"
+        time: "09:30",
+        icon: "👜",
+        title: "整備出發：Wecostay Namsan",
+        desc: "檢查保暖衣物。步行至忠武路站搭乘地鐵。"
       },
       {
-        time: "11:30",
-        icon: "🥧",
-        title: "甜點聖杯：Parole & Langue",
-        desc: "<strong>注意：</strong>13:00 開門，但建議 <strong>12:20</strong> 前抵達使用機器登記候位。<br><strong>必吃：</strong>玉米派 (Corn Pie)、栗子派 (Chestnut Pie)。"
+        time: "10:40",
+        icon: "🥣",
+        title: "望遠市場：在地早午餐",
+        desc: "<strong>必吃：</strong>QS炸雞丁（建議點半半口味）、望遠手工可樂餅（蔬菜或披薩口味）。感受週日早市的活力。"
+      },
+      {
+        time: "11:00",
+        icon: "🌶️",
+        title: "雨耳樂 (Uiwirak)",
+        desc: "<strong>搶頭香：</strong>購買招牌炸辣椒 (Stuffed Peppers)。若人潮眾多可選擇外帶，作為稍後排隊時的糧食。"
+      },
+      {
+        time: "11:40",
+        icon: "🍞",
+        title: "麵包聖地：Ugly Bakery",
+        desc: "<strong>戰術排隊：</strong>12:00 開門，務必提前 20 分鐘抵達卡位。<br><strong>必買：</strong>感動的抹茶猛瑪 (Matcha Mammoth)、黑芝麻猛瑪、鮮奶油麵包。"
       },
       {
         time: "13:00",
-        icon: "🧸",
-        title: "文創巡禮：Object",
-        desc: "前往 Object 西橋店 (或弘大總店)。Dinotaeng 短尾袋鼠周邊聖地。"
+        icon: "🚕",
+        title: "移動至弘大商圈",
+        desc: "搭乘計程車前往弘大（約 10 分鐘，車資約 ₩7,000），節省體力並直達核心區，優於地鐵轉乘。"
       },
       {
-        time: "14:30",
-        icon: "🛍️",
-        title: "弘大商圈最後衝刺",
-        desc: "Marithé 弘大旗艦店、With Muu (K-pop 周邊)。"
+        time: "13:30",
+        icon: "🧸",
+        title: "弘大文創與潮流巡禮",
+        desc: "參觀 <strong>Object</strong> 弘大總店（文創選物），隨後逛 Musinsa Standard 與 Gentle Monster 旗艦店。"
+      },
+      {
+        time: "15:00",
+        icon: "☕",
+        title: "韓屋咖啡：申李道家",
+        desc: "在現代化改造的韓屋中享用草莓拿鐵，中庭設有水池與火爐，是喧鬧弘大中的寧靜避世所。"
       },
       {
         time: "16:00",
-        icon: "🏢",
-        title: "汝矣島現代百貨 (The Hyundai)",
-        desc: "地鐵搭至汝矣島站。目標：<strong>B2 Creative Ground</strong> (年輕潮牌層) 與 5F 室內花園。"
+        icon: "🚌",
+        title: "漢江景觀移動 (巴士 7613)",
+        desc: "搭乘 <strong>7613號巴士</strong> 跨越西江大橋，沿途欣賞漢江日落與夜景，可直達現代百貨門口，避免地鐵轉乘的冗長步行。"
       },
       {
-        time: "18:30",
+        time: "18:10",
+        icon: "🏢",
+        title: "汝矣島現代百貨 (The Hyundai Seoul)",
+        desc: "直奔 <strong>5F Sounds Forest</strong> (室內空中花園) 拍照，隨後逛 <strong>B2 Creative Ground</strong> 潮流層。"
+      },
+      {
+        time: "19:30",
         icon: "🦀",
         title: "晚餐：Odarijip (明洞醬蟹)",
         desc: "返回明洞吃醬蟹 (五達里家)。口味鮮甜，適合初次嘗試者。"
       },
       {
         time: "21:00",
+        icon: "🛏️",
+        title: "返回 Wecostay Namsan",
+        desc: "利用地鐵 5 號線轉 4 號線返回忠武路。抵達後利用房間冰箱保存打包的 Ugly Bakery 麵包。"
+      },
+      {
+        time: "22:00",
         icon: "🍗",
         title: "終極宵夜：橋村炸雞",
         desc: "回飯店叫外送。<strong>必點：</strong>Honey Combo (蜂蜜炸雞)。<br>邊吃邊整理行李，確認重量分配。"
-      }
+      },
     ]
   },
   {
