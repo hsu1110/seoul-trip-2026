@@ -175,44 +175,56 @@ const itineraryData = [
   {
     day: 3,
     date: "2/06 (五)",
-    title: "Day 3: 聖水洞工業風 & 馬場洞韓牛",
-    focus: "潮牌巡禮、頂級牛肉",
+    title: "Day 3: 聖水洞工業風 & 馬場洞韓牛饗宴",
+    focus: "工業風咖啡、潮牌巡禮、頂級韓牛、馬鈴薯排骨湯",
     details: [
       {
         time: "09:30",
-        icon: "☕",
-        title: "早晨：Cafe Onion 聖水店",
-        desc: "聖水站 2 號出口。廢墟工業風名店。必點：Pandoro (雪山麵包)。"
+        icon: "🚇",
+        title: "交通：出發前往聖水洞",
+        desc: "從 Wecostay Namsan 步行至 <strong>忠武路站</strong>。<br>搭乘 <strong>3號線</strong> 至乙支路3街，轉乘 <strong>2號線</strong> 至 <strong>聖水站</strong> (3號出口)。"
       },
       {
-        time: "10:30",
-        icon: "✨",
-        title: "品牌巡禮 Part 1",
-        desc: "<strong>Dior Seongsu：</strong>概念店外觀拍照。<br><strong>Tamburins：</strong>獨特混凝土建築，買香氛/護手霜。<br><strong>Stand Oil：</strong>平價設計包款。"
+        time: "10:10",
+        icon: "☕",
+        title: "早晨：聖水洞咖啡氛圍",
+        desc: "<strong>Cafe Onion 聖水店：</strong>廢墟工業風名店，必點 Pandoro (雪山麵包)。<br>或 <strong>大林倉庫：</strong>宏偉的藝廊倉庫風格咖啡廳。"
+      },
+      {
+        time: "11:30",
+        icon: "🍲",
+        title: "午餐：傳說中的聖水馬鈴薯排骨湯",
+        desc: "店名：<strong>Somunnan Seongsu Gamjatang</strong>。<br>聖水站 4 號出口旁。白鐘元推薦，湯頭濃郁、肉質軟嫩，建議避開正午尖峰。"
       },
       {
         time: "13:00",
-        icon: "🍲",
-        title: "午餐：傳說中的馬鈴薯排骨湯",
-        desc: "店名：Sommunnan Gamjatang (祖傳馬鈴薯排骨湯)。<br>聖水站 4 號出口旁。白鐘元推薦，肉嫩湯濃。"
+        icon: "🛍️",
+        title: "午後：聖水洞品牌巡禮",
+        desc: "<strong>Dior 聖水：</strong>小凡爾賽宮外觀打卡。<br><strong>Tamburins：</strong>Jennie 代言香氛，水泥建築超好拍。<br><strong>LCDC SEOUL：</strong>複合式文創空間，好逛好買。<br>沿路逛 <strong>演武場街 (Yeonmujang-gil)</strong> 的快閃店。"
       },
       {
-        time: "14:00",
-        icon: "🧢",
-        title: "品牌巡禮 Part 2",
-        desc: "<strong>EMIS：</strong>買棒球帽。<br><strong>Mardi Mercredi：</strong>(29CM Seongsu 選品店)。<br><strong>Standard Bread：</strong>爆紅生吐司專賣店。"
+        time: "16:30",
+        icon: "🌳",
+        title: "散步：首爾林 (Seoul Forest)",
+        desc: "從聖水鬧區步行即可抵達。<br>首爾市中心的巨大綠地，鄰近 SM 娛樂的 <strong>曠野 (KWANGYA)</strong> 大樓。"
       },
       {
-        time: "17:00",
+        time: "18:00",
+        icon: "🚕",
+        title: "交通：移動至馬場洞",
+        desc: "建議直接<strong>搭乘計程車</strong>前往馬場洞畜產品市場。<br>距離約 3 公里，車程 10-15 分鐘，車資約 6,000-8,000 韓元 (最省力)。"
+      },
+      {
+        time: "18:30",
         icon: "🥩",
-        title: "晚餐：馬場洞韓牛 (Majang-dong)",
-        desc: "從聖水搭計程車至馬場畜產物市場 (約 10-15 分)。<br><strong>推薦餐廳：</strong>馬場谷 (Majanggol)。<br><strong>模式：</strong>一樓挑肉 (1++等級)，二樓代烤。<br><strong>必吃：</strong>雪花里肌 (Salchisal)。"
+        title: "晚餐：馬場洞韓牛村",
+        desc: "<strong>馬場洞畜產品市場 (Majang Meat Market)</strong>。<br>模式：1樓肉舖挑選 1++ 等級韓牛，2樓食堂支付人頭費代烤。<br><strong>必吃：</strong>雪花里脊 (Salchisal) 與 綜合拼盤。"
       },
       {
-        time: "20:00",
+        time: "20:30",
         icon: "🛏️",
-        title: "返程休息",
-        desc: "本日步行量大，建議早點回飯店休息整理戰利品。"
+        title: "返程：回 Wecostay Namsan",
+        desc: "從 <strong>馬場站 (5號線)</strong> 搭至東大門歷史文化公園，轉 <strong>4號線</strong> 至 <strong>忠武路站</strong>。<br>步行返回住宿休息。"
       }
     ]
   },
